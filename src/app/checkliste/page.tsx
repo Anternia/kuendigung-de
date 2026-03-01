@@ -8,6 +8,9 @@ import {
   PenLine,
   Send,
   FolderOpen,
+  AlertTriangle,
+  Clock,
+  XCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -29,6 +32,31 @@ export default function ChecklistePage() {
       </p>
 
       <div className="mt-8 space-y-6">
+        {/* Sofort nach Kündigung */}
+        <Card className="border-amber-200 bg-amber-50">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Clock className="h-5 w-5 text-amber-600" />
+              Sofort nach Erhalt der Kündigung
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-3">
+              {[
+                "Zugangsdatum notieren: Wann haben Sie die Kündigung tatsächlich erhalten? (Entscheidend für die 3-Wochen-Frist)",
+                "Arbeitssuchend melden: Innerhalb von 3 Tagen bei der Agentur für Arbeit (§ 38 SGB III) -- online, telefonisch oder persönlich",
+                "Kündigung NICHT unterschreiben oder akzeptieren -- eine Kündigungsschutzklage ist trotzdem möglich",
+                "Fristende berechnen: 3 Wochen ab Zugang der Kündigung (Samstag/Sonntag/Feiertag → nächster Werktag)",
+              ].map((item) => (
+                <li key={item} className="flex gap-3">
+                  <CheckSquare className="h-4 w-4 text-amber-600 shrink-0 mt-0.5" />
+                  <span className="text-sm text-amber-900">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+
         {/* Vor der Klage */}
         <Card>
           <CardHeader>
@@ -162,6 +190,59 @@ export default function ChecklistePage() {
           </CardContent>
         </Card>
       </div>
+
+        {/* Häufige Fehler */}
+        <Card className="border-red-200 bg-red-50">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <XCircle className="h-5 w-5 text-red-600" />
+              Häufige Fehler vermeiden
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-3 text-sm text-red-900">
+              <li className="flex gap-3">
+                <AlertTriangle className="h-4 w-4 text-red-500 shrink-0 mt-0.5" />
+                <span>
+                  <strong>Frist verpassen:</strong> Die 3-Wochen-Frist ist eine
+                  Ausschlussfrist. Nach Ablauf gilt die Kündigung als wirksam --
+                  auch wenn sie rechtswidrig war.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <AlertTriangle className="h-4 w-4 text-red-500 shrink-0 mt-0.5" />
+                <span>
+                  <strong>Per E-Mail einreichen:</strong> Eine Klage per E-Mail
+                  wahrt die Frist NICHT. Nur Post, Fax oder persönliche Abgabe
+                  sind zulässig.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <AlertTriangle className="h-4 w-4 text-red-500 shrink-0 mt-0.5" />
+                <span>
+                  <strong>Unterschrift vergessen:</strong> Ohne handschriftliche
+                  Unterschrift ist die Klage formunwirksam.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <AlertTriangle className="h-4 w-4 text-red-500 shrink-0 mt-0.5" />
+                <span>
+                  <strong>Nur ein Exemplar einreichen:</strong> Sie benötigen
+                  zwei Ausfertigungen -- eines für das Gericht, eines wird dem
+                  Arbeitgeber zugestellt.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <AlertTriangle className="h-4 w-4 text-red-500 shrink-0 mt-0.5" />
+                <span>
+                  <strong>Absendedatum statt Eingangsdatum:</strong> Entscheidend
+                  ist der Eingang bei Gericht, nicht wann Sie den Brief abgeschickt
+                  haben. Planen Sie Postlaufzeit ein!
+                </span>
+              </li>
+            </ul>
+          </CardContent>
+        </Card>
 
       <Separator className="my-8" />
 

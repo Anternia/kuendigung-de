@@ -127,20 +127,86 @@ export default function SoFunktioniertEsPage() {
               <p>
                 Nach Eingang der Klage setzt das Arbeitsgericht einen{" "}
                 <strong>Gütetermin</strong> an (in der Regel innerhalb von 2-4
-                Wochen). In dieser Verhandlung versucht das Gericht, eine
+                Wochen). In dieser Verhandlung versucht der Richter, eine
                 gütliche Einigung zu erzielen.
               </p>
-              <p>
-                Ca. 60-70% aller Kündigungsschutzklagen enden mit einem{" "}
-                <strong>Vergleich</strong> -- häufig wird eine Abfindung
-                vereinbart. Bei einem Vergleich entfallen die Gerichtskosten.
-              </p>
-              <p>
-                Kommt kein Vergleich zustande, folgt ein{" "}
-                <strong>Kammertermin</strong> mit ehrenamtlichen Richtern, in
-                dem das Gericht ein Urteil fällt.
+            </div>
+
+            {/* Gütetermin Detail */}
+            <div className="mt-4 rounded-md border bg-muted/30 p-4">
+              <p className="font-semibold text-sm">Der Gütetermin</p>
+              <ul className="mt-2 text-sm text-muted-foreground space-y-2">
+                <li>
+                  Der Richter fasst den Sachverhalt zusammen und gibt eine
+                  vorläufige Einschätzung
+                </li>
+                <li>
+                  Sie schildern kurz die Fakten (Dauer der Beschäftigung,
+                  Tätigkeit, Kündigungsgrund)
+                </li>
+                <li>
+                  Der Richter schlägt häufig einen{" "}
+                  <strong>Vergleich</strong> vor -- meist mit einer Abfindung
+                </li>
+                <li>
+                  Ca. 60-70% aller Fälle enden hier. Sie können den Vergleich
+                  annehmen oder ablehnen
+                </li>
+              </ul>
+            </div>
+
+            {/* Kammertermin Detail */}
+            <div className="mt-4 rounded-md border bg-muted/30 p-4">
+              <p className="font-semibold text-sm">Falls kein Vergleich: Der Kammertermin</p>
+              <ul className="mt-2 text-sm text-muted-foreground space-y-2">
+                <li>
+                  Findet ca. 2-4 Monate nach dem Gütetermin statt
+                </li>
+                <li>
+                  Das Gericht besteht aus einem Berufsrichter und zwei
+                  ehrenamtlichen Richtern (je einer von Arbeitnehmer- und
+                  Arbeitgeberseite)
+                </li>
+                <li>
+                  Beide Seiten tragen ihre Argumente vor, ggf. werden Zeugen
+                  gehört
+                </li>
+                <li>
+                  Das Gericht verkündet ein Urteil. Gegen das Urteil kann
+                  Berufung eingelegt werden (dann besteht Anwaltszwang)
+                </li>
+              </ul>
+            </div>
+
+            {/* Typische Abfindung */}
+            <div className="mt-4 rounded-md border border-blue-200 bg-blue-50 p-4">
+              <p className="font-semibold text-sm text-blue-900">Typische Abfindungshöhe</p>
+              <p className="mt-1 text-sm text-blue-800">
+                Als grobe Orientierung gilt: 0,5 bis 1,0 Bruttomonatsgehälter pro
+                Beschäftigungsjahr. Bei 5 Jahren Betriebszugehörigkeit und 3.500 €
+                Gehalt wären das ca. 8.750-17.500 €. Es gibt aber keinen
+                gesetzlichen Anspruch -- die Höhe ist immer Verhandlungssache.
               </p>
             </div>
+          </div>
+        </div>
+
+        <Separator />
+
+        {/* Wichtig: Arbeitssuchend melden */}
+        <div className="flex gap-6">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700 font-bold text-lg">
+            !
+          </div>
+          <div>
+            <h2 className="text-xl font-semibold">Nicht vergessen: Arbeitssuchend melden</h2>
+            <p className="mt-2 text-muted-foreground">
+              Unabhängig von der Klage müssen Sie sich{" "}
+              <strong>spätestens 3 Tage nach Erhalt der Kündigung</strong> bei der
+              Agentur für Arbeit arbeitssuchend melden (§ 38 SGB III). Versäumen
+              Sie die Meldung, droht eine Sperrzeit beim Arbeitslosengeld. Die
+              Meldung können Sie online, telefonisch oder persönlich vornehmen.
+            </p>
           </div>
         </div>
       </div>

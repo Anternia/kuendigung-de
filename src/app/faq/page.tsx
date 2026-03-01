@@ -62,6 +62,36 @@ const faqs = [
       "Prozesskostenhilfe (PKH) ist staatliche Unterstützung für Personen mit geringem Einkommen. Damit werden die Gerichts- und Anwaltskosten ganz oder teilweise übernommen. Den Antrag können Sie zusammen mit der Klage beim Arbeitsgericht stellen.",
   },
   {
+    frage: "Wie lange dauert ein Kündigungsschutzverfahren?",
+    antwort:
+      "Der Gütetermin findet in der Regel 2-4 Wochen nach Klageerhebung statt. Wird dort ein Vergleich geschlossen, ist das Verfahren beendet. Kommt es zum Kammertermin, dauert das Verfahren insgesamt ca. 3-6 Monate. In seltenen Fällen (z.B. bei Beweisaufnahme) kann es länger dauern.",
+  },
+  {
+    frage: "Was sollte ich zum Gütetermin mitbringen?",
+    antwort:
+      "Bringen Sie zum Gütetermin Ihren Personalausweis, das Kündigungsschreiben (Original), Ihren Arbeitsvertrag, die letzten drei Gehaltsabrechnungen und ggf. vorherige Abmahnungen mit. Bereiten Sie sich darauf vor, die wesentlichen Fakten (Beschäftigungsdauer, Tätigkeit, Kündigungsgrund) kurz darzustellen.",
+  },
+  {
+    frage: "Muss ich während des Verfahrens weiter arbeiten?",
+    antwort:
+      "Das hängt von der Kündigungsfrist ab. Solange die Kündigungsfrist noch nicht abgelaufen ist, besteht Ihr Arbeitsverhältnis fort und Sie müssen grundsätzlich arbeiten (sofern Sie nicht freigestellt wurden). Nach Ablauf der Frist ruht das Arbeitsverhältnis bis zur gerichtlichen Klärung. Melden Sie sich in jedem Fall arbeitssuchend bei der Agentur für Arbeit.",
+  },
+  {
+    frage: "Was ist eine Abfindung und habe ich Anspruch darauf?",
+    antwort:
+      "Eine Abfindung ist eine einmalige Geldzahlung des Arbeitgebers als Entschädigung für den Verlust des Arbeitsplatzes. Es gibt keinen gesetzlichen Anspruch auf eine Abfindung. Sie wird meist im Rahmen eines Vergleichs ausgehandelt. Als grobe Orientierung gilt: 0,5 bis 1,0 Bruttomonatsgehälter pro Beschäftigungsjahr.",
+  },
+  {
+    frage: "Kann ich eine Begleitperson zum Gericht mitbringen?",
+    antwort:
+      "Ja. Sie können eine Person Ihres Vertrauens als Beistand mitnehmen. Diese darf Ihnen helfen und Sie unterstützen, aber nicht selbst Anträge stellen. Alternativ kann ein Gewerkschaftsmitglied sich durch einen Vertreter der Gewerkschaft vertreten lassen (§ 11 Abs. 1 ArbGG).",
+  },
+  {
+    frage: "Was passiert, wenn der Arbeitgeber nicht zum Termin erscheint?",
+    antwort:
+      "Erscheint der Arbeitgeber nicht zum Gütetermin, kann das Gericht auf Antrag ein Versäumnisurteil erlassen, das in der Regel zu Ihren Gunsten ausfällt. In der Praxis erscheint der Arbeitgeber jedoch fast immer, da die Folgen eines Versäumnisurteils erheblich sind.",
+  },
+  {
     frage: "Bietet kuendigung.de Rechtsberatung an?",
     antwort:
       "Nein. kuendigung.de ist ein Formularassistent, der eine Klageschrift auf Basis Ihrer Eingaben generiert. Es findet keine individuelle rechtliche Prüfung oder Beratung statt. Die generierte Klageschrift ist ein Muster, das Sie eigenverantwortlich nutzen.",
@@ -70,6 +100,11 @@ const faqs = [
     frage: "Was ist die Rechtsantragsstelle?",
     antwort:
       "Die Rechtsantragsstelle ist eine Einrichtung an jedem Arbeitsgericht, bei der Sie Ihre Klage mündlich zu Protokoll geben können. Ein Mitarbeiter des Gerichts nimmt Ihre Angaben auf und formuliert die Klage für Sie. Dieser Service ist kostenlos.",
+  },
+  {
+    frage: "Muss ich mich arbeitssuchend melden?",
+    antwort:
+      "Ja. Sie müssen sich spätestens 3 Tage nach Erhalt der Kündigung bei der Agentur für Arbeit arbeitssuchend melden (§ 38 SGB III). Dies gilt unabhängig davon, ob Sie Klage einreichen oder nicht. Versäumen Sie die Meldung, droht eine Sperrzeit beim Arbeitslosengeld.",
   },
   {
     frage: "Kann ich nach Ablauf der 3-Wochen-Frist noch klagen?",

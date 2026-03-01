@@ -12,9 +12,37 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Fristenrechner } from "@/components/fristenrechner";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: "kuendigung.de",
+      url: "https://kuendigung.de",
+      description:
+        "Erstellen Sie Ihre Kündigungsschutzklage einfach und rechtssicher. Ohne Anwalt, innerhalb der 3-Wochen-Frist.",
+      inLanguage: "de-DE",
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kuendigung.de/#webpage",
+      url: "https://kuendigung.de",
+      name: "kuendigung.de – Kündigungsschutzklage einfach erstellen",
+      description:
+        "Erstellen Sie Ihre Kündigungsschutzklage einfach und rechtssicher. Kostenloser Klageschrift-Generator für das Arbeitsgericht.",
+      isPartOf: { "@id": "https://kuendigung.de/#website" },
+      inLanguage: "de-DE",
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-primary/5 to-background py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

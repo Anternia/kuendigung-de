@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CalendarClock, AlertTriangle, CheckCircle, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -54,11 +54,16 @@ const dringlichkeitConfig: Record<
 
 export function Fristenrechner() {
   const [zugangDatum, setZugangDatum] = useState("");
+  const [today, setToday] = useState("");
   const [ergebnis, setErgebnis] = useState<{
     fristEnde: Date;
     tage: number;
     dringlichkeit: Dringlichkeit;
   } | null>(null);
+
+  useEffect(() => {
+    setToday(new Date().toISOString().split("T")[0]);
+  }, []);
 
   function berechne() {
     if (!zugangDatum) return;
@@ -91,7 +96,7 @@ export function Fristenrechner() {
             type="date"
             value={zugangDatum}
             onChange={(e) => setZugangDatum(e.target.value)}
-            max={new Date().toISOString().split("T")[0]}
+            max={today || undefined}
           />
         </div>
 

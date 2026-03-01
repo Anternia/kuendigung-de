@@ -101,6 +101,8 @@ export function Fristenrechner() {
 
         {ergebnis && (
           <div
+            role="status"
+            aria-live="polite"
             className={`rounded-lg border p-4 ${dringlichkeitConfig[ergebnis.dringlichkeit].bg}`}
           >
             <div className="flex items-start gap-3">

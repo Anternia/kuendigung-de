@@ -14,6 +14,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://kuendigung.de";
+
 export const metadata: Metadata = {
   title: {
     default: "kuendigung.de - Kuendigungsschutzklage einfach erstellen",
@@ -30,6 +32,25 @@ export const metadata: Metadata = {
     "Kuendigungsschutz",
   ],
   robots: "index, follow",
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    type: "website",
+    locale: "de_DE",
+    url: siteUrl,
+    siteName: "kuendigung.de",
+    title: "kuendigung.de - Kuendigungsschutzklage einfach erstellen",
+    description:
+      "Erstellen Sie Ihre Kuendigungsschutzklage einfach und rechtssicher. Ohne Anwalt, innerhalb der 3-Wochen-Frist.",
+  },
+  twitter: {
+    card: "summary",
+    title: "kuendigung.de - Kuendigungsschutzklage einfach erstellen",
+    description:
+      "Kuendigungsschutzklage ohne Anwalt erstellen. Kostenloser Klageschrift-Generator.",
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
 };
 
 export default function RootLayout({
@@ -42,8 +63,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:m-2 focus:rounded-md"
+        >
+          Zum Inhalt springen
+        </a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>

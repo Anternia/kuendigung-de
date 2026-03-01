@@ -43,7 +43,9 @@ export function Header() {
         <button
           className="md:hidden"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Navigation oeffnen"
+          aria-label={mobileMenuOpen ? "Navigation schliessen" : "Navigation oeffnen"}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-navigation"
         >
           {mobileMenuOpen ? (
             <X className="h-6 w-6" />
@@ -55,7 +57,7 @@ export function Header() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="border-t md:hidden">
+        <div id="mobile-navigation" className="border-t md:hidden" role="navigation" aria-label="Mobile Navigation">
           <div className="space-y-1 px-4 py-3">
             {navigation.map((item) => (
               <Link

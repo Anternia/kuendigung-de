@@ -53,7 +53,7 @@ export function Kostenrechner() {
         </Button>
 
         {ergebnis && (
-          <div className="space-y-4">
+          <div className="space-y-4" role="status" aria-live="polite">
             <Separator />
 
             <div className="grid grid-cols-2 gap-4">

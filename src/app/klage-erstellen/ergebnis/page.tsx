@@ -29,6 +29,7 @@ export default function ErgebnisPage() {
   const [formData, setFormData] = useState<KlageFormData | null>(null);
   const [pdfUrl, setPdfUrl] = useState<string | null>(null);
   const [generating, setGenerating] = useState(false);
+  const [pdfError, setPdfError] = useState<string | null>(null);
 
   useEffect(() => {
     const stored = sessionStorage.getItem("klageFormData");
@@ -36,12 +37,17 @@ export default function ErgebnisPage() {
       router.push("/klage-erstellen");
       return;
     }
-    setFormData(JSON.parse(stored));
+    try {
+      setFormData(JSON.parse(stored));
+    } catch {
+      router.push("/klage-erstellen");
+    }
   }, [router]);
 
   async function handleGeneratePdf() {
     if (!formData) return;
     setGenerating(true);
+    setPdfError(null);
     try {
       const content = generateKlageschriftContent(formData);
       const blob = await generatePdfBlob(content);
@@ -57,6 +63,9 @@ export default function ErgebnisPage() {
       document.body.removeChild(a);
     } catch (err) {
       console.error("PDF-Generierung fehlgeschlagen:", err);
+      setPdfError(
+        "Die PDF-Generierung ist fehlgeschlagen. Bitte versuchen Sie es erneut oder verwenden Sie einen anderen Browser."
+      );
     } finally {
       setGenerating(false);
     }
@@ -101,6 +110,11 @@ export default function ErgebnisPage() {
                 Druckfertige Klageschrift mit allen Ihren Angaben
               </p>
             </div>
+            {pdfError && (
+              <div role="alert" className="w-full rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+                {pdfError}
+              </div>
+            )}
             {pdfUrl ? (
               <Button asChild size="lg">
                 <a href={pdfUrl} download="Kuendigungsschutzklage.pdf">

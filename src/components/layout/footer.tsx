@@ -14,7 +14,7 @@ export function Footer() {
               <span className="text-lg font-bold">kuendigung.de</span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
-              Erstellen Sie Ihre Kuendigungsschutzklage einfach und schnell --
+              Erstellen Sie Ihre Kündigungsschutzklage einfach und schnell --
               ohne Anwalt.
             </p>
           </div>
@@ -44,7 +44,7 @@ export function Footer() {
                   href="/faq"
                   className="text-sm text-muted-foreground hover:text-foreground"
                 >
-                  Haeufige Fragen
+                  Häufige Fragen
                 </Link>
               </li>
               <li>

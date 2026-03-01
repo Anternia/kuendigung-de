@@ -19,14 +19,14 @@ interface Props {
 const rechtsformen = [
   "Einzelunternehmen",
   "GmbH",
-  "UG (haftungsbeschraenkt)",
+  "UG (haftungsbeschränkt)",
   "AG",
   "GmbH & Co. KG",
   "KG",
   "OHG",
   "GbR",
   "e.V.",
-  "Koerperschaft des oeffentlichen Rechts",
+  "Körperschaft des öffentlichen Rechts",
   "Sonstige",
 ];
 
@@ -46,7 +46,7 @@ export function Schritt2Beklagter({ form }: Props) {
         <h2 className="text-xl font-semibold">Angaben zum Arbeitgeber</h2>
         <p className="text-sm text-muted-foreground mt-1">
           Ihr Arbeitgeber ist der Beklagte im Verfahren. Die Angaben finden Sie
-          auf Ihrem Arbeitsvertrag oder der Kuendigung.
+          auf Ihrem Arbeitsvertrag oder der Kündigung.
         </p>
       </div>
 
@@ -68,10 +68,10 @@ export function Schritt2Beklagter({ form }: Props) {
         </div>
 
         <div>
-          <Label htmlFor="beklagter-strasse">Strasse und Hausnummer *</Label>
+          <Label htmlFor="beklagter-strasse">Straße und Hausnummer *</Label>
           <Input
             id="beklagter-strasse"
-            placeholder="Firmenstrasse 10"
+            placeholder="Firmenstraße 10"
             {...register("beklagter.strasse")}
           />
           {errors.beklagter?.strasse && (
@@ -118,7 +118,7 @@ export function Schritt2Beklagter({ form }: Props) {
             onValueChange={(value) => setValue("beklagter.rechtsform", value)}
           >
             <SelectTrigger>
-              <SelectValue placeholder="Rechtsform waehlen (optional)" />
+              <SelectValue placeholder="Rechtsform wählen (optional)" />
             </SelectTrigger>
             <SelectContent>
               {rechtsformen.map((rf) => (
@@ -132,15 +132,15 @@ export function Schritt2Beklagter({ form }: Props) {
 
         <div>
           <Label htmlFor="beklagter-vertreter">
-            Gesetzlicher Vertreter (z.B. Geschaeftsfuehrer)
+            Gesetzlicher Vertreter (z.B. Geschäftsführer)
           </Label>
           <Input
             id="beklagter-vertreter"
-            placeholder="z.B. Hans Mueller, Geschaeftsfuehrer"
+            placeholder="z.B. Hans Müller, Geschäftsführer"
             {...register("beklagter.vertreter")}
           />
           <p className="text-xs text-muted-foreground mt-1">
-            Bei einer GmbH oder AG muessen Sie den gesetzlichen Vertreter
+            Bei einer GmbH oder AG müssen Sie den gesetzlichen Vertreter
             angeben. Diesen finden Sie z.B. im Handelsregister.
           </p>
         </div>

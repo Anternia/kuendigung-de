@@ -104,7 +104,7 @@ export default function ErgebnisPage() {
             <FileText className="h-12 w-12 text-primary" />
             <div>
               <h2 className="text-lg font-semibold">
-                Kuendigungsschutzklage.pdf
+                Kündigungsschutzklage.pdf
               </h2>
               <p className="text-sm text-muted-foreground">
                 Druckfertige Klageschrift mit allen Ihren Angaben
@@ -150,7 +150,7 @@ export default function ErgebnisPage() {
                 PDF zweimal ausdrucken
               </h3>
               <p className="text-sm text-muted-foreground mt-1">
-                Das Arbeitsgericht benoetigt zwei Exemplare: eines fuer die
+                Das Arbeitsgericht benötigt zwei Exemplare: eines für die
                 Gerichtsakte und eines zur Zustellung an den Arbeitgeber.
               </p>
             </div>
@@ -186,10 +186,10 @@ export default function ErgebnisPage() {
                 An das Arbeitsgericht senden
               </h3>
               <div className="text-sm text-muted-foreground mt-1 space-y-2">
-                <p>Sie haben drei Moeglichkeiten:</p>
+                <p>Sie haben drei Möglichkeiten:</p>
                 <ul className="list-disc pl-5 space-y-1">
                   <li>
-                    <strong>Per Post</strong> (Einschreiben mit Rueckschein
+                    <strong>Per Post</strong> (Einschreiben mit Rückschein
                     empfohlen)
                   </li>
                   <li>
@@ -197,7 +197,7 @@ export default function ErgebnisPage() {
                     Sendebericht aufbewahren als Zugangsnachweis.
                   </li>
                   <li>
-                    <strong>Persoenlich</strong> bei der Rechtsantragsstelle
+                    <strong>Persönlich</strong> bei der Rechtsantragsstelle
                     des Arbeitsgerichts abgeben.
                   </li>
                 </ul>
@@ -212,10 +212,10 @@ export default function ErgebnisPage() {
               4
             </div>
             <div>
-              <h3 className="font-semibold">Eingangsbestaetigung aufbewahren</h3>
+              <h3 className="font-semibold">Eingangsbestätigung aufbewahren</h3>
               <p className="text-sm text-muted-foreground mt-1">
-                Bewahren Sie den Rueckschein, Fax-Sendebericht oder die
-                Eingangsbestaetigung sorgfaeltig auf.
+                Bewahren Sie den Rückschein, Fax-Sendebericht oder die
+                Eingangsbestätigung sorgfältig auf.
               </p>
             </div>
           </div>
@@ -274,7 +274,7 @@ export default function ErgebnisPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="shrink-0">&#x2717;</span>
-                  Einreichung per E-Mail ist <strong>nicht zulaessig</strong>.
+                  Einreichung per E-Mail ist <strong>nicht zulässig</strong>.
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="shrink-0">&#x270D;</span>
@@ -300,11 +300,11 @@ export default function ErgebnisPage() {
       <div className="rounded-md border bg-muted/50 p-4 mb-6">
         <p className="text-xs text-muted-foreground">
           Hinweis: Die generierte Klageschrift ist ein Muster und stellt keine
-          Rechtsberatung dar. Pruefen Sie alle Angaben sorgfaeltig. Bei
-          komplexen Faellen (z.B. fristlose Kuendigung, Sonderkuendigungsschutz)
-          empfehlen wir dringend die Konsultation eines Fachanwalts fuer
-          Arbeitsrecht. kuendigung.de uebernimmt keine Haftung fuer die
-          Richtigkeit oder Vollstaendigkeit der generierten Dokumente.
+          Rechtsberatung dar. Prüfen Sie alle Angaben sorgfältig. Bei
+          komplexen Fällen (z.B. fristlose Kündigung, Sonderkündigungsschutz)
+          empfehlen wir dringend die Konsultation eines Fachanwalts für
+          Arbeitsrecht. kuendigung.de übernimmt keine Haftung für die
+          Richtigkeit oder Vollständigkeit der generierten Dokumente.
         </p>
       </div>
 

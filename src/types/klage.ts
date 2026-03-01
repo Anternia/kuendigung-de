@@ -5,9 +5,9 @@ export enum KuendigungArt {
 }
 
 export const kuendigungArtLabels: Record<KuendigungArt, string> = {
-  [KuendigungArt.ORDENTLICH]: "Ordentliche Kuendigung",
-  [KuendigungArt.AUSSERORDENTLICH]: "Ausserordentliche (fristlose) Kuendigung",
-  [KuendigungArt.AENDERUNGSKUENDIGUNG]: "Aenderungskuendigung",
+  [KuendigungArt.ORDENTLICH]: "Ordentliche Kündigung",
+  [KuendigungArt.AUSSERORDENTLICH]: "Außerordentliche (fristlose) Kündigung",
+  [KuendigungArt.AENDERUNGSKUENDIGUNG]: "Änderungskündigung",
 };
 
 export interface KlageFormData {

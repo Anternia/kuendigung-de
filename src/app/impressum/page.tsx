@@ -10,14 +10,14 @@ export default function ImpressumPage() {
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 prose prose-neutral">
       <h1>Impressum</h1>
       <p className="text-muted-foreground">
-        Angaben gemaess § 5 DDG (Digitale-Dienste-Gesetz)
+        Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz)
       </p>
 
       <h2>Anbieter</h2>
       <p>
         Synbis GmbH
         <br />
-        Ottostrasse 6
+        Ottostraße 6
         <br />
         53332 Bornheim
         <br />
@@ -36,7 +36,7 @@ export default function ImpressumPage() {
       </p>
 
       <h2>Vertretungsberechtigt</h2>
-      <p>Geschaeftsfuehrer: Thomas Hellwege</p>
+      <p>Geschäftsführer: Thomas Hellwege</p>
 
       <h2>Registereintrag</h2>
       <p>
@@ -47,7 +47,7 @@ export default function ImpressumPage() {
 
       <h2>Umsatzsteuer-ID</h2>
       <p>
-        Umsatzsteuer-Identifikationsnummer gemaess § 27a UStG:
+        Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:
         <br />
         DE296274595
       </p>
@@ -59,14 +59,14 @@ export default function ImpressumPage() {
       <p>
         Thomas Hellwege
         <br />
-        Ottostrasse 6
+        Ottostraße 6
         <br />
         53332 Bornheim
       </p>
 
       <h2>EU-Streitschlichtung</h2>
       <p>
-        Die Europaeische Kommission stellt eine Plattform zur
+        Die Europäische Kommission stellt eine Plattform zur
         Online-Streitbeilegung (OS) bereit. Unsere E-Mail-Adresse finden Sie
         oben im Impressum. Wir sind nicht bereit oder verpflichtet, an
         Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
@@ -84,24 +84,24 @@ export default function ImpressumPage() {
         erfolgt auf eigene Verantwortung.
       </p>
 
-      <h2>Haftung fuer Inhalte</h2>
+      <h2>Haftung für Inhalte</h2>
       <p>
-        Die Inhalte dieser Website wurden mit groesster Sorgfalt erstellt. Fuer
-        die Richtigkeit, Vollstaendigkeit und Aktualitaet der Inhalte koennen
-        wir jedoch keine Gewaehr uebernehmen. Als Diensteanbieter sind wir
-        gemaess § 7 Abs. 1 DDG fuer eigene Inhalte auf diesen Seiten nach den
+        Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für
+        die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können
+        wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir
+        gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den
         allgemeinen Gesetzen verantwortlich.
       </p>
 
-      <h2>Haftung fuer Links</h2>
+      <h2>Haftung für Links</h2>
       <p>
-        Unser Angebot enthaelt Links zu externen Websites Dritter, auf deren
-        Inhalte wir keinen Einfluss haben. Fuer die Inhalte der verlinkten
+        Unser Angebot enthält Links zu externen Websites Dritter, auf deren
+        Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten
         Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.
       </p>
 
       <p className="text-sm text-muted-foreground mt-8">
-        Stand: Maerz 2026
+        Stand: März 2026
       </p>
     </div>
   );

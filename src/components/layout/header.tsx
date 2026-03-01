@@ -24,7 +24,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex md:items-center md:gap-6">
+        <div className="hidden lg:flex lg:items-center lg:gap-6">
           {navigation.map((item) => (
             <Link
               key={item.href}
@@ -41,9 +41,9 @@ export function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden"
+          className="lg:hidden"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? "Navigation schliessen" : "Navigation oeffnen"}
+          aria-label={mobileMenuOpen ? "Navigation schließen" : "Navigation öffnen"}
           aria-expanded={mobileMenuOpen}
           aria-controls="mobile-navigation"
         >
@@ -57,7 +57,7 @@ export function Header() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div id="mobile-navigation" className="border-t md:hidden" role="navigation" aria-label="Mobile Navigation">
+        <div id="mobile-navigation" className="border-t lg:hidden" role="navigation" aria-label="Mobile Navigation">
           <div className="space-y-1 px-4 py-3">
             {navigation.map((item) => (
               <Link

@@ -18,16 +18,16 @@ export function Schritt3Arbeitsverhaeltnis({ form }: Props) {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-xl font-semibold">Angaben zum Arbeitsverhaeltnis</h2>
+        <h2 className="text-xl font-semibold">Angaben zum Arbeitsverhältnis</h2>
         <p className="text-sm text-muted-foreground mt-1">
-          Diese Angaben benoetigen wir fuer die Klageschrift und zur Berechnung
+          Diese Angaben benötigen wir für die Klageschrift und zur Berechnung
           des Streitwerts.
         </p>
       </div>
 
       <div className="space-y-4">
         <div>
-          <Label htmlFor="av-beginn">Beschaeftigt seit *</Label>
+          <Label htmlFor="av-beginn">Beschäftigt seit *</Label>
           <Input
             id="av-beginn"
             type="date"
@@ -41,10 +41,10 @@ export function Schritt3Arbeitsverhaeltnis({ form }: Props) {
         </div>
 
         <div>
-          <Label htmlFor="av-taetigkeit">Taetigkeit / Position *</Label>
+          <Label htmlFor="av-taetigkeit">Tätigkeit / Position *</Label>
           <Input
             id="av-taetigkeit"
-            placeholder="z.B. Softwareentwickler, Buchhalter, Verkaeuferin"
+            placeholder="z.B. Softwareentwickler, Buchhalter, Verkäuferin"
             {...register("arbeitsverhaeltnis.taetigkeit")}
           />
           {errors.arbeitsverhaeltnis?.taetigkeit && (
@@ -71,7 +71,7 @@ export function Schritt3Arbeitsverhaeltnis({ form }: Props) {
           )}
           <p className="text-xs text-muted-foreground mt-1">
             Das Bruttogehalt finden Sie auf Ihrer letzten Lohnabrechnung. Es
-            wird zur Berechnung des Streitwerts benoetigt (3 Monatsgehaelter).
+            wird zur Berechnung des Streitwerts benötigt (3 Monatsgehälter).
           </p>
         </div>
 
@@ -80,7 +80,7 @@ export function Schritt3Arbeitsverhaeltnis({ form }: Props) {
             <Label htmlFor="av-arbeitsort">Arbeitsort *</Label>
             <Input
               id="av-arbeitsort"
-              placeholder="z.B. Berlin, Hamburg, Muenchen"
+              placeholder="z.B. Berlin, Hamburg, München"
               {...register("arbeitsverhaeltnis.arbeitsort")}
             />
             {errors.arbeitsverhaeltnis?.arbeitsort && (
@@ -105,8 +105,8 @@ export function Schritt3Arbeitsverhaeltnis({ form }: Props) {
           </div>
         </div>
         <p className="text-xs text-muted-foreground -mt-2">
-          Arbeitsort und PLZ werden zur Ermittlung des zustaendigen
-          Arbeitsgerichts benoetigt.
+          Arbeitsort und PLZ werden zur Ermittlung des zuständigen
+          Arbeitsgerichts benötigt.
         </p>
       </div>
     </div>

@@ -14,9 +14,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
 export const metadata: Metadata = {
-  title: "Checkliste Kuendigungsschutzklage",
+  title: "Checkliste Kündigungsschutzklage",
   description:
-    "Checkliste fuer die Einreichung Ihrer Kuendigungsschutzklage. Alles, was Sie benoetigen und beachten muessen.",
+    "Checkliste für die Einreichung Ihrer Kündigungsschutzklage. Alles, was Sie benötigen und beachten müssen.",
 };
 
 export default function ChecklistePage() {
@@ -24,8 +24,8 @@ export default function ChecklistePage() {
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold">Checkliste</h1>
       <p className="mt-3 text-lg text-muted-foreground">
-        Alles, was Sie fuer die Einreichung Ihrer Kuendigungsschutzklage
-        benoetigen.
+        Alles, was Sie für die Einreichung Ihrer Kündigungsschutzklage
+        benötigen.
       </p>
 
       <div className="mt-8 space-y-6">
@@ -40,12 +40,12 @@ export default function ChecklistePage() {
           <CardContent>
             <ul className="space-y-3">
               {[
-                "Kuendigungsschreiben (Original oder Kopie)",
+                "Kündigungsschreiben (Original oder Kopie)",
                 "Arbeitsvertrag",
-                "Letzte Lohnabrechnung(en) (fuer Bruttogehalt)",
+                "Letzte Lohnabrechnung(en) (für Bruttogehalt)",
                 "Name und Anschrift des Arbeitgebers",
-                "Ggf. Name des Geschaeftsfuehrers / gesetzlichen Vertreters",
-                "Datum, an dem Sie die Kuendigung erhalten haben",
+                "Ggf. Name des Geschäftsführers / gesetzlichen Vertreters",
+                "Datum, an dem Sie die Kündigung erhalten haben",
               ].map((item) => (
                 <li key={item} className="flex gap-3">
                   <CheckSquare className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
@@ -67,8 +67,8 @@ export default function ChecklistePage() {
           <CardContent>
             <ul className="space-y-3">
               {[
-                "Fragebogen auf kuendigung.de vollstaendig ausfuellen",
-                "Alle Angaben auf Richtigkeit pruefen",
+                "Fragebogen auf kuendigung.de vollständig ausfüllen",
+                "Alle Angaben auf Richtigkeit prüfen",
                 "Klageschrift als PDF herunterladen",
               ].map((item) => (
                 <li key={item} className="flex gap-3">
@@ -91,9 +91,9 @@ export default function ChecklistePage() {
           <CardContent>
             <ul className="space-y-3">
               {[
-                "PDF ZWEIMAL ausdrucken (1x fuer das Gericht, 1x fuer die Zustellung an den Arbeitgeber)",
+                "PDF ZWEIMAL ausdrucken (1x für das Gericht, 1x für die Zustellung an den Arbeitgeber)",
                 "BEIDE Exemplare handschriftlich unterschreiben (Ort, Datum, Unterschrift)",
-                "Kuendigungsschreiben in Kopie beilegen (empfohlen, nicht Pflicht)",
+                "Kündigungsschreiben in Kopie beilegen (empfohlen, nicht Pflicht)",
               ].map((item) => (
                 <li key={item} className="flex gap-3">
                   <CheckSquare className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
@@ -115,11 +115,11 @@ export default function ChecklistePage() {
           <CardContent>
             <ul className="space-y-3">
               {[
-                "Beide Exemplare an das zustaendige Arbeitsgericht senden (per Post, Fax oder persoenlich)",
-                "Bei Postversand: Einschreiben mit Rueckschein verwenden",
+                "Beide Exemplare an das zuständige Arbeitsgericht senden (per Post, Fax oder persönlich)",
+                "Bei Postversand: Einschreiben mit Rückschein verwenden",
                 "Bei Fax: Sendebericht aufbewahren (= Zugangsnachweis)",
-                "Frist pruefen: Eingang bei Gericht muss vor Fristablauf sein!",
-                "Eingangsbestaetigung / Rueckschein / Sendebericht sicher aufbewahren",
+                "Frist prüfen: Eingang bei Gericht muss vor Fristablauf sein!",
+                "Eingangsbestätigung / Rückschein / Sendebericht sicher aufbewahren",
               ].map((item) => (
                 <li key={item} className="flex gap-3">
                   <CheckSquare className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
@@ -146,17 +146,17 @@ export default function ChecklistePage() {
                 Sendebericht dient als Zugangsnachweis.
               </li>
               <li>
-                <strong>Rechtsantragsstelle:</strong> Alternativ koennen Sie
+                <strong>Rechtsantragsstelle:</strong> Alternativ können Sie
                 bei der Rechtsantragsstelle des Arbeitsgerichts die Klage
-                muendlich zu Protokoll geben.
+                mündlich zu Protokoll geben.
               </li>
               <li>
                 <strong>Kopien behalten:</strong> Bewahren Sie immer eine Kopie
-                der eingereichten Klageschrift fuer Ihre Unterlagen auf.
+                der eingereichten Klageschrift für Ihre Unterlagen auf.
               </li>
               <li>
                 <strong>Prozesskostenhilfe:</strong> Bei geringem Einkommen
-                koennen Sie PKH beantragen -- zusammen mit der Klage.
+                können Sie PKH beantragen -- zusammen mit der Klage.
               </li>
             </ul>
           </CardContent>

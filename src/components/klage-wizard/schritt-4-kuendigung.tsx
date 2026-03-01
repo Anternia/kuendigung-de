@@ -36,15 +36,15 @@ export function Schritt4Kuendigung({ form }: Props) {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-xl font-semibold">Angaben zur Kuendigung</h2>
+        <h2 className="text-xl font-semibold">Angaben zur Kündigung</h2>
         <p className="text-sm text-muted-foreground mt-1">
-          Diese Informationen finden Sie auf dem Kuendigungsschreiben.
+          Diese Informationen finden Sie auf dem Kündigungsschreiben.
         </p>
       </div>
 
       <div className="space-y-4">
         <div>
-          <Label htmlFor="k-datum">Datum des Kuendigungsschreibens *</Label>
+          <Label htmlFor="k-datum">Datum des Kündigungsschreibens *</Label>
           <Input
             id="k-datum"
             type="date"
@@ -58,7 +58,7 @@ export function Schritt4Kuendigung({ form }: Props) {
         </div>
 
         <div>
-          <Label htmlFor="k-zugang">Datum des Zugangs der Kuendigung *</Label>
+          <Label htmlFor="k-zugang">Datum des Zugangs der Kündigung *</Label>
           <Input
             id="k-zugang"
             type="date"
@@ -70,8 +70,8 @@ export function Schritt4Kuendigung({ form }: Props) {
             </p>
           )}
           <p className="text-xs text-muted-foreground mt-1">
-            Der Tag, an dem Sie die Kuendigung erhalten haben (z.B. aus dem
-            Briefkasten geholt, persoenlich uebergeben bekommen).
+            Der Tag, an dem Sie die Kündigung erhalten haben (z.B. aus dem
+            Briefkasten geholt, persönlich übergeben bekommen).
           </p>
 
           {fristInfo && (
@@ -99,7 +99,7 @@ export function Schritt4Kuendigung({ form }: Props) {
         </div>
 
         <div>
-          <Label>Art der Kuendigung *</Label>
+          <Label>Art der Kündigung *</Label>
           <RadioGroup
             value={kuendigungArt || ""}
             onValueChange={(value) =>
@@ -125,7 +125,7 @@ export function Schritt4Kuendigung({ form }: Props) {
 
         <div>
           <Label htmlFor="k-beendigung">
-            Beendigungsdatum laut Kuendigung
+            Beendigungsdatum laut Kündigung
           </Label>
           <Input
             id="k-beendigung"
@@ -133,8 +133,8 @@ export function Schritt4Kuendigung({ form }: Props) {
             {...register("kuendigung.beendigungDatum")}
           />
           <p className="text-xs text-muted-foreground mt-1">
-            Das Datum, zu dem das Arbeitsverhaeltnis laut Kuendigung enden soll.
-            Bei fristloser Kuendigung ist dies das Zugangsdatum.
+            Das Datum, zu dem das Arbeitsverhältnis laut Kündigung enden soll.
+            Bei fristloser Kündigung ist dies das Zugangsdatum.
           </p>
         </div>
       </div>

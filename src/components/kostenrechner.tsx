@@ -63,7 +63,7 @@ export function Kostenrechner() {
                   {formatEUR(ergebnis.streitwert)} EUR
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  (3 Bruttomonatsgehaelter)
+                  (3 Bruttomonatsgehälter)
                 </p>
               </div>
               <div>
@@ -74,7 +74,7 @@ export function Kostenrechner() {
                   {formatEUR(ergebnis.gerichtskosten)} EUR
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  (2-fache Gebuehr)
+                  (2-fache Gebühr)
                 </p>
               </div>
             </div>
@@ -82,7 +82,7 @@ export function Kostenrechner() {
             <div className="rounded-md border border-green-200 bg-green-50 p-3">
               <p className="text-sm text-green-800">
                 <strong>Bei Vergleich:</strong> Gerichtskosten entfallen
-                vollstaendig (0,00 EUR).
+                vollständig (0,00 EUR).
               </p>
             </div>
 

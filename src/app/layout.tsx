@@ -18,18 +18,18 @@ const siteUrl = "https://kuendigung.de";
 
 export const metadata: Metadata = {
   title: {
-    default: "kuendigung.de - Kuendigungsschutzklage einfach erstellen",
+    default: "kuendigung.de - Kündigungsschutzklage einfach erstellen",
     template: "%s | kuendigung.de",
   },
   description:
-    "Erstellen Sie Ihre Kuendigungsschutzklage einfach und rechtssicher. Ohne Anwalt, innerhalb der 3-Wochen-Frist. Kostenloser Klageschrift-Generator.",
+    "Erstellen Sie Ihre Kündigungsschutzklage einfach und rechtssicher. Ohne Anwalt, innerhalb der 3-Wochen-Frist. Kostenloser Klageschrift-Generator.",
   keywords: [
-    "Kuendigungsschutzklage",
-    "Kuendigung",
+    "Kündigungsschutzklage",
+    "Kündigung",
     "Arbeitsgericht",
     "Klageschrift",
     "Arbeitsrecht",
-    "Kuendigungsschutz",
+    "Kündigungsschutz",
   ],
   robots: "index, follow",
   metadataBase: new URL(siteUrl),
@@ -38,15 +38,15 @@ export const metadata: Metadata = {
     locale: "de_DE",
     url: siteUrl,
     siteName: "kuendigung.de",
-    title: "kuendigung.de - Kuendigungsschutzklage einfach erstellen",
+    title: "kuendigung.de - Kündigungsschutzklage einfach erstellen",
     description:
-      "Erstellen Sie Ihre Kuendigungsschutzklage einfach und rechtssicher. Ohne Anwalt, innerhalb der 3-Wochen-Frist.",
+      "Erstellen Sie Ihre Kündigungsschutzklage einfach und rechtssicher. Ohne Anwalt, innerhalb der 3-Wochen-Frist.",
   },
   twitter: {
     card: "summary",
-    title: "kuendigung.de - Kuendigungsschutzklage einfach erstellen",
+    title: "kuendigung.de - Kündigungsschutzklage einfach erstellen",
     description:
-      "Kuendigungsschutzklage ohne Anwalt erstellen. Kostenloser Klageschrift-Generator.",
+      "Kündigungsschutzklage ohne Anwalt erstellen. Kostenloser Klageschrift-Generator.",
   },
   alternates: {
     canonical: siteUrl,

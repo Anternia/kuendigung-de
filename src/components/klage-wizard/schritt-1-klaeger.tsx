@@ -18,15 +18,15 @@ export function Schritt1Klaeger({ form }: Props) {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-xl font-semibold">Ihre persoenlichen Daten</h2>
+        <h2 className="text-xl font-semibold">Ihre persönlichen Daten</h2>
         <p className="text-sm text-muted-foreground mt-1">
-          Als Klaeger benoetigen wir Ihren Namen und Ihre Anschrift.
+          Als Kläger benötigen wir Ihren Namen und Ihre Anschrift.
         </p>
       </div>
 
       <div className="space-y-4">
         <div>
-          <Label htmlFor="klaeger-name">Vollstaendiger Name *</Label>
+          <Label htmlFor="klaeger-name">Vollständiger Name *</Label>
           <Input
             id="klaeger-name"
             placeholder="Max Mustermann"
@@ -40,10 +40,10 @@ export function Schritt1Klaeger({ form }: Props) {
         </div>
 
         <div>
-          <Label htmlFor="klaeger-strasse">Strasse und Hausnummer *</Label>
+          <Label htmlFor="klaeger-strasse">Straße und Hausnummer *</Label>
           <Input
             id="klaeger-strasse"
-            placeholder="Musterstrasse 1"
+            placeholder="Musterstraße 1"
             {...register("klaeger.strasse")}
           />
           {errors.klaeger?.strasse && (

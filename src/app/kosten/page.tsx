@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import { Kostenrechner } from "@/components/kostenrechner";
 
 export const metadata: Metadata = {
-  title: "Kosten einer Kuendigungsschutzklage",
+  title: "Kosten einer Kündigungsschutzklage",
   description:
-    "Was kostet eine Kuendigungsschutzklage? Berechnen Sie die voraussichtlichen Gerichtskosten und informieren Sie sich ueber Prozesskostenhilfe.",
+    "Was kostet eine Kündigungsschutzklage? Berechnen Sie die voraussichtlichen Gerichtskosten und informieren Sie sich über Prozesskostenhilfe.",
 };
 
 export default function KostenPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold">Kosten einer Kuendigungsschutzklage</h1>
+      <h1 className="text-3xl font-bold">Kosten einer Kündigungsschutzklage</h1>
       <p className="mt-3 text-lg text-muted-foreground">
-        Was kostet eine Kuendigungsschutzklage am Arbeitsgericht?
+        Was kostet eine Kündigungsschutzklage am Arbeitsgericht?
       </p>
 
       <div className="mt-8">
@@ -23,8 +23,8 @@ export default function KostenPage() {
         <section>
           <h2 className="text-xl font-semibold">Wie berechnet sich der Streitwert?</h2>
           <p className="mt-2 text-muted-foreground">
-            Der Streitwert einer Kuendigungsschutzklage betraegt in der Regel 3
-            Bruttomonatsgehaelter (§ 42 Abs. 2 GKG). Auf Basis des Streitwerts
+            Der Streitwert einer Kündigungsschutzklage beträgt in der Regel 3
+            Bruttomonatsgehälter (§ 42 Abs. 2 GKG). Auf Basis des Streitwerts
             werden die Gerichtskosten berechnet.
           </p>
         </section>
@@ -32,9 +32,9 @@ export default function KostenPage() {
         <section>
           <h2 className="text-xl font-semibold">Kein Gerichtskostenvorschuss</h2>
           <p className="mt-2 text-muted-foreground">
-            Anders als bei Zivilgerichten muessen Sie am Arbeitsgericht keinen
+            Anders als bei Zivilgerichten müssen Sie am Arbeitsgericht keinen
             Gerichtskostenvorschuss zahlen. Die Gerichtskosten werden erst nach
-            Abschluss des Verfahrens faellig.
+            Abschluss des Verfahrens fällig.
           </p>
         </section>
 
@@ -42,14 +42,14 @@ export default function KostenPage() {
           <h2 className="text-xl font-semibold">Vergleich spart Gerichtskosten</h2>
           <p className="mt-2 text-muted-foreground">
             Endet das Verfahren mit einem Vergleich (was in ca. 60-70% der
-            Faelle geschieht), entfallen die Gerichtskosten vollstaendig.
+            Fälle geschieht), entfallen die Gerichtskosten vollständig.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-semibold">Anwaltskosten in erster Instanz</h2>
           <p className="mt-2 text-muted-foreground">
-            Eine Besonderheit am Arbeitsgericht: In der ersten Instanz traegt
+            Eine Besonderheit am Arbeitsgericht: In der ersten Instanz trägt
             jede Partei ihre eigenen Anwaltskosten -- auch der Gewinner
             (§ 12a ArbGG). Wenn Sie keinen Anwalt beauftragen, fallen nur die
             Gerichtskosten an.
@@ -59,10 +59,10 @@ export default function KostenPage() {
         <section>
           <h2 className="text-xl font-semibold">Prozesskostenhilfe (PKH)</h2>
           <p className="mt-2 text-muted-foreground">
-            Wenn Sie ueber ein geringes Einkommen verfuegen, koennen Sie
-            Prozesskostenhilfe beantragen. Damit uebernimmt der Staat die
+            Wenn Sie über ein geringes Einkommen verfügen, können Sie
+            Prozesskostenhilfe beantragen. Damit übernimmt der Staat die
             Gerichts- und ggf. Anwaltskosten ganz oder teilweise. Den Antrag
-            koennen Sie zusammen mit der Klage beim Arbeitsgericht einreichen
+            können Sie zusammen mit der Klage beim Arbeitsgericht einreichen
             oder bei der Rechtsantragsstelle stellen.
           </p>
         </section>
@@ -71,9 +71,9 @@ export default function KostenPage() {
           <h2 className="text-xl font-semibold">Rechtsschutzversicherung</h2>
           <p className="mt-2 text-muted-foreground">
             Wenn Sie eine Rechtsschutzversicherung mit Arbeitsrechtsschutz
-            haben, uebernimmt diese in der Regel die Kosten fuer den Anwalt und
-            die Gerichtskosten. Pruefen Sie Ihren Versicherungsschein und melden
-            Sie den Fall fruehzeitig.
+            haben, übernimmt diese in der Regel die Kosten für den Anwalt und
+            die Gerichtskosten. Prüfen Sie Ihren Versicherungsschein und melden
+            Sie den Fall frühzeitig.
           </p>
         </section>
       </div>

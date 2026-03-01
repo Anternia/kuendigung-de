@@ -89,7 +89,7 @@ describe("findeZustaendigeGerichte", () => {
   it("findet Gerichte fuer Muenchen (PLZ 80)", () => {
     const result = findeZustaendigeGerichte("80797");
     expect(result.length).toBeGreaterThanOrEqual(1);
-    expect(result.some((g) => g.name.includes("Muenchen"))).toBe(true);
+    expect(result.some((g) => g.name.includes("München"))).toBe(true);
   });
 
   it("findet Gerichte fuer Buxtehude-Gegend (PLZ 21)", () => {
@@ -98,7 +98,7 @@ describe("findeZustaendigeGerichte", () => {
     // PLZ 21 sollte Hamburg, Stade oder Lueneburg zeigen
     const namen = result.map((g) => g.name);
     expect(
-      namen.some((n) => n.includes("Hamburg") || n.includes("Stade") || n.includes("Lueneburg"))
+      namen.some((n) => n.includes("Hamburg") || n.includes("Stade") || n.includes("Lüneburg"))
     ).toBe(true);
   });
 
@@ -119,12 +119,12 @@ describe("findeZustaendigeGerichte", () => {
       { plz: "10", region: "Berlin" },
       { plz: "20", region: "Hamburg" },
       { plz: "30", region: "Hannover" },
-      { plz: "40", region: "Duesseldorf" },
-      { plz: "50", region: "Koeln" },
+      { plz: "40", region: "Düsseldorf" },
+      { plz: "50", region: "Köln" },
       { plz: "60", region: "Frankfurt" },
       { plz: "70", region: "Stuttgart" },
-      { plz: "80", region: "Muenchen" },
-      { plz: "90", region: "Nuernberg" },
+      { plz: "80", region: "München" },
+      { plz: "90", region: "Nürnberg" },
     ];
 
     for (const { plz, region } of testCases) {

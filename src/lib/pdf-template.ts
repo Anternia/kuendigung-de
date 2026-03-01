@@ -17,9 +17,9 @@ function getKuendigungArtAdjektiv(art: KuendigungArt): string {
     case KuendigungArt.ORDENTLICH:
       return "ordentliche";
     case KuendigungArt.AUSSERORDENTLICH:
-      return "ausserordentliche (fristlose)";
+      return "außerordentliche (fristlose)";
     case KuendigungArt.AENDERUNGSKUENDIGUNG:
-      return "Aenderungskuendigung";
+      return "Änderungskündigung";
   }
 }
 
@@ -28,9 +28,9 @@ function getKuendigungArtAdverb(art: KuendigungArt): string {
     case KuendigungArt.ORDENTLICH:
       return "ordentlich";
     case KuendigungArt.AUSSERORDENTLICH:
-      return "ausserordentlich (fristlos)";
+      return "außerordentlich (fristlos)";
     case KuendigungArt.AENDERUNGSKUENDIGUNG:
-      return "im Wege der Aenderungskuendigung";
+      return "im Wege der Änderungskündigung";
   }
 }
 
@@ -48,12 +48,12 @@ function getBeklagterBezeichnung(data: KlageFormData): string {
 
 function getBeendigungsklausel(data: KlageFormData): string {
   if (data.kuendigung.kuendigungArt === KuendigungArt.AUSSERORDENTLICH) {
-    return "nicht aufgeloest hat";
+    return "nicht aufgelöst hat";
   }
   if (data.kuendigung.beendigungDatum) {
-    return `nicht zum ${formatDateDE(data.kuendigung.beendigungDatum)} aufloesen wird`;
+    return `nicht zum ${formatDateDE(data.kuendigung.beendigungDatum)} auflösen wird`;
   }
-  return "nicht aufloesen wird";
+  return "nicht auflösen wird";
 }
 
 export interface KlageschriftContent {
@@ -91,20 +91,20 @@ export function generateKlageschriftContent(
   const beklagterBezeichnung = getBeklagterBezeichnung(data);
   const beendigungsklausel = getBeendigungsklausel(data);
 
-  const klageantrag1 = `Es wird festgestellt, dass das Arbeitsverhaeltnis zwischen dem Klaeger und der Beklagten durch die ${kuendigungArtAdjektiv} Kuendigung vom ${formatDateDE(data.kuendigung.kuendigungDatum)}, zugegangen am ${formatDateDE(data.kuendigung.zugangDatum)}, ${beendigungsklausel}.`;
+  const klageantrag1 = `Es wird festgestellt, dass das Arbeitsverhältnis zwischen dem Kläger und der Beklagten durch die ${kuendigungArtAdjektiv} Kündigung vom ${formatDateDE(data.kuendigung.kuendigungDatum)}, zugegangen am ${formatDateDE(data.kuendigung.zugangDatum)}, ${beendigungsklausel}.`;
 
   const klageantrag2 =
-    "Es wird festgestellt, dass das Arbeitsverhaeltnis auch nicht durch andere Beendigungstatbestaende endet, sondern ueber den Kuendigungstermin hinaus ungekuendigt fortbesteht.";
+    "Es wird festgestellt, dass das Arbeitsverhältnis auch nicht durch andere Beendigungstatbestände endet, sondern über den Kündigungstermin hinaus ungekündigt fortbesteht.";
 
   const streitwert = (
     Number(data.arbeitsverhaeltnis.bruttoMonatsgehalt) * 3
   ).toLocaleString("de-DE", { minimumFractionDigits: 2 });
 
   const begruendung = [
-    `Der Klaeger ist seit dem ${formatDateDE(data.arbeitsverhaeltnis.beschaeftigungBeginn)} bei der Beklagten als ${data.arbeitsverhaeltnis.taetigkeit} beschaeftigt. Das monatliche Bruttogehalt betraegt ${Number(data.arbeitsverhaeltnis.bruttoMonatsgehalt).toLocaleString("de-DE", { minimumFractionDigits: 2 })} EUR.`,
-    `Mit Schreiben vom ${formatDateDE(data.kuendigung.kuendigungDatum)}, zugegangen am ${formatDateDE(data.kuendigung.zugangDatum)}, hat die Beklagte das Arbeitsverhaeltnis ${kuendigungArtAdverb} gekuendigt.`,
-    "Die Kuendigung ist sozial ungerechtfertigt und damit rechtsunwirksam. Die Kuendigung ist weder durch Gruende in der Person oder in dem Verhalten des Klaegers noch durch dringende betriebliche Erfordernisse bedingt.",
-    "Der Klaeger erhebt daher innerhalb der Frist des § 4 KSchG Kuendigungsschutzklage.",
+    `Der Kläger ist seit dem ${formatDateDE(data.arbeitsverhaeltnis.beschaeftigungBeginn)} bei der Beklagten als ${data.arbeitsverhaeltnis.taetigkeit} beschäftigt. Das monatliche Bruttogehalt beträgt ${Number(data.arbeitsverhaeltnis.bruttoMonatsgehalt).toLocaleString("de-DE", { minimumFractionDigits: 2 })} EUR.`,
+    `Mit Schreiben vom ${formatDateDE(data.kuendigung.kuendigungDatum)}, zugegangen am ${formatDateDE(data.kuendigung.zugangDatum)}, hat die Beklagte das Arbeitsverhältnis ${kuendigungArtAdverb} gekündigt.`,
+    "Die Kündigung ist sozial ungerechtfertigt und damit rechtsunwirksam. Die Kündigung ist weder durch Gründe in der Person oder in dem Verhalten des Klägers noch durch dringende betriebliche Erfordernisse bedingt.",
+    "Der Kläger erhebt daher innerhalb der Frist des § 4 KSchG Kündigungsschutzklage.",
   ];
 
   return {
@@ -125,6 +125,6 @@ export function generateKlageschriftContent(
     klageantrag1,
     klageantrag2,
     begruendung,
-    streitwert: `${streitwert} EUR (3 Bruttomonatsgehaelter)`,
+    streitwert: `${streitwert} EUR (3 Bruttomonatsgehälter)`,
   };
 }

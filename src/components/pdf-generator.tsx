@@ -125,12 +125,12 @@ function KlageschriftPDF({ content }: Props) {
         </View>
 
         {/* Titel */}
-        <Text style={styles.title}>Kuendigungsschutzklage</Text>
+        <Text style={styles.title}>Kündigungsschutzklage</Text>
 
         {/* Parteien */}
         <View style={styles.parteien}>
           <View style={styles.parteiBlock}>
-            <Text style={styles.parteiRolle}>Klaeger:</Text>
+            <Text style={styles.parteiRolle}>Kläger:</Text>
             <Text>{content.klaeger.name}</Text>
             <Text>{content.klaeger.anschrift}</Text>
           </View>
@@ -146,7 +146,7 @@ function KlageschriftPDF({ content }: Props) {
 
         {/* Wegen */}
         <Text style={styles.paragraph}>
-          wegen Kuendigungsschutz
+          wegen Kündigungsschutz
         </Text>
 
         {/* Klageantraege */}
@@ -169,7 +169,7 @@ function KlageschriftPDF({ content }: Props) {
         </View>
 
         {/* Begruendung */}
-        <Text style={styles.sectionTitle}>Begruendung:</Text>
+        <Text style={styles.sectionTitle}>Begründung:</Text>
 
         {content.begruendung.map((absatz, i) => (
           <Text key={i} style={styles.paragraph}>
@@ -186,7 +186,7 @@ function KlageschriftPDF({ content }: Props) {
         <View style={styles.unterschrift}>
           <View style={styles.unterschriftLinie} />
           <Text style={styles.unterschriftText}>
-            Ort, Datum, Unterschrift des Klaegers
+            Ort, Datum, Unterschrift des Klägers
           </Text>
         </View>
 
@@ -195,7 +195,7 @@ function KlageschriftPDF({ content }: Props) {
           <Text>
             Hinweis: Diese Klageschrift muss handschriftlich unterschrieben und
             in zweifacher Ausfertigung beim Arbeitsgericht eingereicht werden.
-            Einreichung per E-Mail ist nicht zulaessig. Erstellt mit
+            Einreichung per E-Mail ist nicht zulässig. Erstellt mit
             kuendigung.de -- keine Rechtsberatung.
           </Text>
         </View>

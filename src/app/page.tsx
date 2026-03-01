@@ -21,12 +21,12 @@ export default function Home() {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <div>
               <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-                Kuendigungsschutzklage
+                Kündigungsschutzklage
                 <br />
                 <span className="text-primary">einfach selbst erstellen</span>
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
-                Sie wurden gekuendigt? In der ersten Instanz besteht kein
+                Sie wurden gekündigt? In der ersten Instanz besteht kein
                 Anwaltszwang. Erstellen Sie Ihre Klageschrift in wenigen
                 Minuten -- kostenlos und rechtssicher.
               </p>
@@ -44,8 +44,8 @@ export default function Home() {
               <div className="mt-8 flex items-center gap-2 text-sm text-muted-foreground">
                 <Shield className="h-4 w-4" />
                 <span>
-                  Ihre Daten werden verschluesselt uebertragen und nach 30 Tagen
-                  automatisch geloescht.
+                  Ihre Daten werden verschlüsselt übertragen und nach 30 Tagen
+                  automatisch gelöscht.
                 </span>
               </div>
             </div>
@@ -64,7 +64,7 @@ export default function Home() {
             <Clock className="h-5 w-5 text-red-600 shrink-0" />
             <p className="text-sm font-medium text-red-800">
               Wichtig: Die Klage muss innerhalb von{" "}
-              <strong>3 Wochen nach Zugang der Kuendigung</strong> beim
+              <strong>3 Wochen nach Zugang der Kündigung</strong> beim
               Arbeitsgericht eingehen! (§ 4 KSchG)
             </p>
           </div>
@@ -78,7 +78,7 @@ export default function Home() {
             In 3 Schritten zur Klageschrift
           </h2>
           <p className="mt-3 text-center text-muted-foreground">
-            Kein Anwalt noetig -- Sie koennen die Klage in erster Instanz selbst
+            Kein Anwalt nötig -- Sie können die Klage in erster Instanz selbst
             einreichen.
           </p>
 
@@ -93,8 +93,8 @@ export default function Home() {
                   <h3 className="font-semibold text-lg">Daten eingeben</h3>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Fuellen Sie den Fragebogen mit Ihren persoenlichen Daten,
-                  Angaben zum Arbeitgeber und zur Kuendigung aus.
+                  Füllen Sie den Fragebogen mit Ihren persönlichen Daten,
+                  Angaben zum Arbeitgeber und zur Kündigung aus.
                 </p>
               </CardContent>
             </Card>
@@ -131,7 +131,7 @@ export default function Home() {
                 </div>
                 <p className="text-sm text-muted-foreground">
                   Senden Sie die Klage per Post (Einschreiben), Fax oder geben
-                  Sie sie persoenlich bei der Rechtsantragsstelle ab.
+                  Sie sie persönlich bei der Rechtsantragsstelle ab.
                 </p>
               </CardContent>
             </Card>
@@ -158,7 +158,7 @@ export default function Home() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
-                title: "Kein Anwalt noetig",
+                title: "Kein Anwalt nötig",
                 text: "In der ersten Instanz am Arbeitsgericht besteht kein Anwaltszwang (§ 11 ArbGG).",
               },
               {
@@ -167,11 +167,11 @@ export default function Home() {
               },
               {
                 title: "Rechtssichere Vorlage",
-                text: "Die Klageschrift enthaelt alle Pflichtangaben und den korrekten Feststellungsantrag.",
+                text: "Die Klageschrift enthält alle Pflichtangaben und den korrekten Feststellungsantrag.",
               },
               {
                 title: "DSGVO-konform",
-                text: "Ihre Daten werden verschluesselt uebertragen und nach 30 Tagen automatisch geloescht.",
+                text: "Ihre Daten werden verschlüsselt übertragen und nach 30 Tagen automatisch gelöscht.",
               },
             ].map((item) => (
               <div key={item.title} className="flex gap-3">
@@ -195,8 +195,8 @@ export default function Home() {
             Hinweis: kuendigung.de bietet allgemeine Informationen und einen
             Formularassistenten zur Erstellung einer Klageschrift. Dies stellt
             keine Rechtsberatung dar. Die generierte Klageschrift ist ein
-            Muster. Pruefen Sie alle Angaben sorgfaeltig. Bei komplexen Faellen
-            empfehlen wir die Konsultation eines Fachanwalts fuer Arbeitsrecht.
+            Muster. Prüfen Sie alle Angaben sorgfältig. Bei komplexen Fällen
+            empfehlen wir die Konsultation eines Fachanwalts für Arbeitsrecht.
           </p>
         </div>
       </section>

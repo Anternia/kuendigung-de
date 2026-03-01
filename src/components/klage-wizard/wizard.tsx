@@ -22,8 +22,8 @@ import { Schritt6Zusammenfassung } from "./schritt-6-zusammenfassung";
 const schritte = [
   { title: "Ihre Daten", fields: ["klaeger"] as const },
   { title: "Arbeitgeber", fields: ["beklagter"] as const },
-  { title: "Arbeitsverhaeltnis", fields: ["arbeitsverhaeltnis"] as const },
-  { title: "Kuendigung", fields: ["kuendigung"] as const },
+  { title: "Arbeitsverhältnis", fields: ["arbeitsverhaeltnis"] as const },
+  { title: "Kündigung", fields: ["kuendigung"] as const },
   { title: "Gericht", fields: ["gericht"] as const },
   { title: "Zusammenfassung", fields: [] as const },
 ];
@@ -159,7 +159,7 @@ export function KlageWizard() {
               type="button"
               onClick={dismissRestoredBanner}
               className="text-blue-400 hover:text-blue-600"
-              aria-label="Banner schliessen"
+              aria-label="Banner schließen"
             >
               <X className="h-4 w-4" />
             </button>
@@ -196,7 +196,7 @@ export function KlageWizard() {
             disabled={schritt === 0}
           >
             <ChevronLeft className="mr-1 h-4 w-4" />
-            Zurueck
+            Zurück
           </Button>
           <Button
             variant="ghost"

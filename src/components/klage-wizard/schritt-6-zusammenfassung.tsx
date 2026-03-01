@@ -49,14 +49,14 @@ export function Schritt6Zusammenfassung({
           Zusammenfassung
         </h2>
         <p className="text-sm text-muted-foreground mt-1">
-          Bitte pruefen Sie alle Angaben sorgfaeltig, bevor Sie die Klageschrift
+          Bitte prüfen Sie alle Angaben sorgfältig, bevor Sie die Klageschrift
           erstellen.
         </p>
       </div>
 
       {/* Klaeger */}
       <div>
-        <h3 className="font-semibold text-sm mb-2">Klaeger (Sie)</h3>
+        <h3 className="font-semibold text-sm mb-2">Kläger (Sie)</h3>
         <dl className="grid grid-cols-1 gap-2 sm:grid-cols-2">
           <Feld label="Name" value={data.klaeger.name} />
           <Feld
@@ -86,13 +86,13 @@ export function Schritt6Zusammenfassung({
 
       {/* Arbeitsverhaeltnis */}
       <div>
-        <h3 className="font-semibold text-sm mb-2">Arbeitsverhaeltnis</h3>
+        <h3 className="font-semibold text-sm mb-2">Arbeitsverhältnis</h3>
         <dl className="grid grid-cols-1 gap-2 sm:grid-cols-2">
           <Feld
-            label="Beschaeftigt seit"
+            label="Beschäftigt seit"
             value={formatDate(data.arbeitsverhaeltnis.beschaeftigungBeginn)}
           />
-          <Feld label="Taetigkeit" value={data.arbeitsverhaeltnis.taetigkeit} />
+          <Feld label="Tätigkeit" value={data.arbeitsverhaeltnis.taetigkeit} />
           <Feld
             label="Bruttomonatsgehalt"
             value={`${Number(data.arbeitsverhaeltnis.bruttoMonatsgehalt).toLocaleString("de-DE", { minimumFractionDigits: 2 })} EUR`}
@@ -105,10 +105,10 @@ export function Schritt6Zusammenfassung({
 
       {/* Kuendigung */}
       <div>
-        <h3 className="font-semibold text-sm mb-2">Kuendigung</h3>
+        <h3 className="font-semibold text-sm mb-2">Kündigung</h3>
         <dl className="grid grid-cols-1 gap-2 sm:grid-cols-2">
           <Feld
-            label="Kuendigung vom"
+            label="Kündigung vom"
             value={formatDate(data.kuendigung.kuendigungDatum)}
           />
           <Feld
@@ -141,7 +141,7 @@ export function Schritt6Zusammenfassung({
           </dl>
         ) : (
           <p className="text-sm text-destructive">
-            Kein Arbeitsgericht ausgewaehlt.
+            Kein Arbeitsgericht ausgewählt.
           </p>
         )}
       </div>
@@ -163,7 +163,7 @@ export function Schritt6Zusammenfassung({
                 werden.
               </li>
               <li>
-                Einreichung per E-Mail ist <strong>nicht zulaessig</strong>.
+                Einreichung per E-Mail ist <strong>nicht zulässig</strong>.
               </li>
               <li>
                 Entscheidend ist der <strong>Eingang bei Gericht</strong>, nicht
@@ -183,7 +183,7 @@ export function Schritt6Zusammenfassung({
             onCheckedChange={(v) => onAcceptedChange(v === true)}
           />
           <Label htmlFor="accept-disclaimer" className="font-normal text-sm leading-5">
-            Ich habe alle Angaben geprueft und verstanden, dass kuendigung.de
+            Ich habe alle Angaben geprüft und verstanden, dass kuendigung.de
             keine Rechtsberatung erbringt. Die generierte Klageschrift ist ein
             Muster, das ich eigenverantwortlich nutze.
           </Label>

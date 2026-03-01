@@ -17,7 +17,7 @@ import { Separator } from "@/components/ui/separator";
 export const metadata: Metadata = {
   title: "So funktioniert es",
   description:
-    "Erfahren Sie, wie Sie mit kuendigung.de Ihre Kuendigungsschutzklage erstellen und beim Arbeitsgericht einreichen.",
+    "Erfahren Sie, wie Sie mit kuendigung.de Ihre Kündigungsschutzklage erstellen und beim Arbeitsgericht einreichen.",
 };
 
 export default function SoFunktioniertEsPage() {
@@ -25,7 +25,7 @@ export default function SoFunktioniertEsPage() {
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold">So funktioniert es</h1>
       <p className="mt-3 text-lg text-muted-foreground">
-        Von der Kuendigung bis zur Klage -- in wenigen Schritten.
+        Von der Kündigung bis zur Klage -- in wenigen Schritten.
       </p>
 
       <div className="mt-10 space-y-10">
@@ -37,13 +37,13 @@ export default function SoFunktioniertEsPage() {
           <div>
             <h2 className="text-xl font-semibold flex items-center gap-2">
               <FileText className="h-5 w-5 text-primary" />
-              Fragebogen ausfuellen
+              Fragebogen ausfüllen
             </h2>
             <p className="mt-2 text-muted-foreground">
-              Geben Sie Ihre persoenlichen Daten, die Angaben zu Ihrem
-              Arbeitgeber, Ihrem Arbeitsverhaeltnis und der Kuendigung in
-              unseren gefuehrten Fragebogen ein. Alle Eingaben werden
-              verschluesselt uebertragen.
+              Geben Sie Ihre persönlichen Daten, die Angaben zu Ihrem
+              Arbeitgeber, Ihrem Arbeitsverhältnis und der Kündigung in
+              unseren geführten Fragebogen ein. Alle Eingaben werden
+              verschlüsselt übertragen.
             </p>
           </div>
         </div>
@@ -69,7 +69,7 @@ export default function SoFunktioniertEsPage() {
             <div className="mt-3 rounded-md border border-yellow-200 bg-yellow-50 p-3">
               <p className="text-sm text-yellow-800">
                 Ohne handschriftliche Unterschrift ist die Klage unwirksam.
-                Eine Einreichung per E-Mail ist nicht zulaessig.
+                Eine Einreichung per E-Mail ist nicht zulässig.
               </p>
             </div>
           </div>
@@ -88,13 +88,13 @@ export default function SoFunktioniertEsPage() {
               Beim Arbeitsgericht einreichen
             </h2>
             <p className="mt-2 text-muted-foreground">
-              Senden Sie beide Exemplare an das zustaendige Arbeitsgericht.
-              Sie haben drei Moeglichkeiten:
+              Senden Sie beide Exemplare an das zuständige Arbeitsgericht.
+              Sie haben drei Möglichkeiten:
             </p>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li className="flex gap-2">
                 <span className="font-semibold text-foreground">Per Post:</span>
-                Einschreiben mit Rueckschein empfohlen. Beachten Sie die
+                Einschreiben mit Rückschein empfohlen. Beachten Sie die
                 Postlaufzeit!
               </li>
               <li className="flex gap-2">
@@ -103,7 +103,7 @@ export default function SoFunktioniertEsPage() {
               </li>
               <li className="flex gap-2">
                 <span className="font-semibold text-foreground">
-                  Persoenlich:
+                  Persönlich:
                 </span>
                 Bei der Rechtsantragsstelle des Arbeitsgerichts abgeben.
               </li>
@@ -126,19 +126,19 @@ export default function SoFunktioniertEsPage() {
             <div className="mt-2 space-y-3 text-muted-foreground">
               <p>
                 Nach Eingang der Klage setzt das Arbeitsgericht einen{" "}
-                <strong>Guetetermin</strong> an (in der Regel innerhalb von 2-4
+                <strong>Gütetermin</strong> an (in der Regel innerhalb von 2-4
                 Wochen). In dieser Verhandlung versucht das Gericht, eine
-                guetliche Einigung zu erzielen.
+                gütliche Einigung zu erzielen.
               </p>
               <p>
-                Ca. 60-70% aller Kuendigungsschutzklagen enden mit einem{" "}
-                <strong>Vergleich</strong> -- haeufig wird eine Abfindung
+                Ca. 60-70% aller Kündigungsschutzklagen enden mit einem{" "}
+                <strong>Vergleich</strong> -- häufig wird eine Abfindung
                 vereinbart. Bei einem Vergleich entfallen die Gerichtskosten.
               </p>
               <p>
                 Kommt kein Vergleich zustande, folgt ein{" "}
                 <strong>Kammertermin</strong> mit ehrenamtlichen Richtern, in
-                dem das Gericht ein Urteil faellt.
+                dem das Gericht ein Urteil fällt.
               </p>
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function SoFunktioniertEsPage() {
               <div>
                 <p className="text-sm font-semibold">Kein Anwaltszwang</p>
                 <p className="text-xs text-muted-foreground">
-                  In erster Instanz koennen Sie sich selbst vertreten (§ 11
+                  In erster Instanz können Sie sich selbst vertreten (§ 11
                   ArbGG).
                 </p>
               </div>
@@ -174,7 +174,7 @@ export default function SoFunktioniertEsPage() {
               <div>
                 <p className="text-sm font-semibold">Rechtsantragsstelle</p>
                 <p className="text-xs text-muted-foreground">
-                  Alternativ koennen Sie die Klage dort muendlich zu Protokoll
+                  Alternativ können Sie die Klage dort mündlich zu Protokoll
                   geben.
                 </p>
               </div>

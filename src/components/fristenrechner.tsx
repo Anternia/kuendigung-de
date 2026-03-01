@@ -30,25 +30,25 @@ const dringlichkeitConfig: Record<
     color: "text-green-700",
     bg: "bg-green-50 border-green-200",
     icon: <CheckCircle className="h-5 w-5 text-green-600" />,
-    text: "Sie haben noch genuegend Zeit.",
+    text: "Sie haben noch genügend Zeit.",
   },
   gelb: {
     color: "text-yellow-700",
     bg: "bg-yellow-50 border-yellow-200",
     icon: <Clock className="h-5 w-5 text-yellow-600" />,
-    text: "Die Frist laeuft bald ab. Handeln Sie zeitnah!",
+    text: "Die Frist läuft bald ab. Handeln Sie zeitnah!",
   },
   rot: {
     color: "text-red-700",
     bg: "bg-red-50 border-red-200",
     icon: <AlertTriangle className="h-5 w-5 text-red-600" />,
-    text: "Achtung: Die Frist laeuft in Kuerze ab! Handeln Sie sofort!",
+    text: "Achtung: Die Frist läuft in Kürze ab! Handeln Sie sofort!",
   },
   abgelaufen: {
     color: "text-red-700",
     bg: "bg-red-50 border-red-200",
     icon: <AlertTriangle className="h-5 w-5 text-red-600" />,
-    text: "Die 3-Wochen-Frist ist bereits abgelaufen. Eine nachtraegliche Zulassung ist nur in Ausnahmefaellen moeglich (§ 5 KSchG).",
+    text: "Die 3-Wochen-Frist ist bereits abgelaufen. Eine nachträgliche Zulassung ist nur in Ausnahmefällen möglich (§ 5 KSchG).",
   },
 };
 
@@ -80,10 +80,10 @@ export function Fristenrechner() {
       <CardContent className="space-y-4">
         <div>
           <Label htmlFor="zugang-datum">
-            Wann haben Sie die Kuendigung erhalten?
+            Wann haben Sie die Kündigung erhalten?
           </Label>
           <p className="text-sm text-muted-foreground mb-2">
-            Entscheidend ist der Tag, an dem Ihnen die Kuendigung zugegangen ist
+            Entscheidend ist der Tag, an dem Ihnen die Kündigung zugegangen ist
             (z.B. aus dem Briefkasten geholt).
           </p>
           <Input

@@ -95,10 +95,10 @@ export function Schritt5Gericht({ form }: Props) {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-xl font-semibold">Zustaendiges Arbeitsgericht</h2>
+        <h2 className="text-xl font-semibold">Zuständiges Arbeitsgericht</h2>
         <p className="text-sm text-muted-foreground mt-1">
-          Waehlen Sie das Arbeitsgericht, bei dem Sie die Klage einreichen
-          moechten.
+          Wählen Sie das Arbeitsgericht, bei dem Sie die Klage einreichen
+          möchten.
         </p>
       </div>
 
@@ -107,7 +107,7 @@ export function Schritt5Gericht({ form }: Props) {
           <Info className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" />
           <div className="text-sm text-blue-800 space-y-1">
             <p>
-              Gemaess § 46 Abs. 2 ArbGG koennen Sie waehlen: Arbeitsgericht
+              Gemäß § 46 Abs. 2 ArbGG können Sie wählen: Arbeitsgericht
               am <strong>Arbeitsort</strong> oder am{" "}
               <strong>Sitz des Arbeitgebers</strong>.
             </p>
@@ -131,7 +131,7 @@ export function Schritt5Gericht({ form }: Props) {
             {beklagterPlz && arbeitsortPlz && beklagterPlz.slice(0, 2) !== arbeitsortPlz.slice(0, 2)
               ? " und dem Sitz des Arbeitgebers"
               : ""}
-            . Bitte pruefen Sie die Zustaendigkeit.
+            . Bitte prüfen Sie die Zuständigkeit.
           </p>
           <div className="space-y-2">
             {vorgeschlageneGerichte.map((gericht) => (
@@ -190,7 +190,7 @@ export function Schritt5Gericht({ form }: Props) {
       {selectedGericht && (
         <div className="rounded-md border bg-muted/50 p-4">
           <h3 className="font-semibold text-sm mb-2">
-            Ausgewaehltes Gericht:
+            Ausgewähltes Gericht:
           </h3>
           <p className="text-sm">{selectedGericht.name}</p>
           <p className="text-sm text-muted-foreground">

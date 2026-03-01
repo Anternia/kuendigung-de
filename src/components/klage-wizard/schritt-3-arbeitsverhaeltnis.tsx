@@ -75,23 +75,39 @@ export function Schritt3Arbeitsverhaeltnis({ form }: Props) {
           </p>
         </div>
 
-        <div>
-          <Label htmlFor="av-arbeitsort">Arbeitsort *</Label>
-          <Input
-            id="av-arbeitsort"
-            placeholder="z.B. Berlin, Hamburg, Muenchen"
-            {...register("arbeitsverhaeltnis.arbeitsort")}
-          />
-          {errors.arbeitsverhaeltnis?.arbeitsort && (
-            <p className="text-sm text-destructive mt-1">
-              {errors.arbeitsverhaeltnis.arbeitsort.message}
-            </p>
-          )}
-          <p className="text-xs text-muted-foreground mt-1">
-            Der Arbeitsort ist relevant fuer die Bestimmung des zustaendigen
-            Arbeitsgerichts.
-          </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <Label htmlFor="av-arbeitsort">Arbeitsort *</Label>
+            <Input
+              id="av-arbeitsort"
+              placeholder="z.B. Berlin, Hamburg, Muenchen"
+              {...register("arbeitsverhaeltnis.arbeitsort")}
+            />
+            {errors.arbeitsverhaeltnis?.arbeitsort && (
+              <p className="text-sm text-destructive mt-1">
+                {errors.arbeitsverhaeltnis.arbeitsort.message}
+              </p>
+            )}
+          </div>
+          <div>
+            <Label htmlFor="av-arbeitsort-plz">PLZ des Arbeitsorts *</Label>
+            <Input
+              id="av-arbeitsort-plz"
+              placeholder="z.B. 10785"
+              maxLength={5}
+              {...register("arbeitsverhaeltnis.arbeitsortPlz")}
+            />
+            {errors.arbeitsverhaeltnis?.arbeitsortPlz && (
+              <p className="text-sm text-destructive mt-1">
+                {errors.arbeitsverhaeltnis.arbeitsortPlz.message}
+              </p>
+            )}
+          </div>
         </div>
+        <p className="text-xs text-muted-foreground -mt-2">
+          Arbeitsort und PLZ werden zur Ermittlung des zustaendigen
+          Arbeitsgerichts benoetigt.
+        </p>
       </div>
     </div>
   );

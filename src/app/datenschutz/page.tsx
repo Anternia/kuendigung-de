@@ -11,14 +11,15 @@ export default function DatenschutzPage() {
 
       <h2>1. Verantwortlicher</h2>
       <p>
-        {/* TODO: Vor Go-Live mit echten Daten ersetzen */}
-        TODO: Firmenname / Vor- und Nachname eintragen
+        Synbis GmbH
         <br />
-        TODO: Strasse und Hausnummer eintragen
+        Ottostrasse 6
         <br />
-        TODO: PLZ und Ort eintragen
+        53332 Bornheim
         <br />
-        E-Mail: TODO: E-Mail-Adresse eintragen
+        Telefon: 02227 – 8589181
+        <br />
+        E-Mail: info@synbis.de
       </p>
 
       <h2>2. Ueberblick ueber die Datenverarbeitung</h2>
@@ -133,7 +134,7 @@ export default function DatenschutzPage() {
       </p>
 
       <p className="text-sm text-muted-foreground mt-8">
-        Stand: Februar 2026
+        Stand: Maerz 2026
       </p>
     </div>
   );

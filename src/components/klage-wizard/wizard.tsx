@@ -4,11 +4,13 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ChevronLeft, ChevronRight, FileDown } from "lucide-react";
+import { ChevronLeft, ChevronRight, FileDown, RotateCcw, Info, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { klageFormSchema } from "@/lib/validierung";
+import { useWizardPersistence } from "@/hooks/use-wizard-persistence";
+import { clearDraft } from "@/lib/wizard-persistence";
 import { KuendigungArt, type KlageFormData } from "@/types/klage";
 import { Schritt1Klaeger } from "./schritt-1-klaeger";
 import { Schritt2Beklagter } from "./schritt-2-beklagter";
@@ -49,6 +51,7 @@ export function KlageWizard() {
         taetigkeit: "",
         bruttoMonatsgehalt: 0,
         arbeitsort: "",
+        arbeitsortPlz: "",
       },
       kuendigung: {
         kuendigungDatum: "",
@@ -60,6 +63,9 @@ export function KlageWizard() {
     },
     mode: "onTouched",
   });
+
+  const { wasRestored, dismissRestoredBanner, clearAndReset } =
+    useWizardPersistence({ form, schritt, setSchritt });
 
   const istLetzterSchritt = schritt === schritte.length - 1;
   const progress = ((schritt + 1) / schritte.length) * 100;
@@ -86,6 +92,7 @@ export function KlageWizard() {
   function onSubmit() {
     if (!accepted) return;
     const data = form.getValues();
+    clearDraft();
     // Daten in sessionStorage speichern fuer Ergebnisseite
     sessionStorage.setItem("klageFormData", JSON.stringify(data));
     router.push("/klage-erstellen/ergebnis");
@@ -120,6 +127,46 @@ export function KlageWizard() {
         ))}
       </div>
 
+      {/* Wiederherstellungs-Banner */}
+      {wasRestored && (
+        <div className="rounded-md border border-blue-200 bg-blue-50 p-4">
+          <div className="flex items-start gap-3">
+            <Info className="h-5 w-5 text-blue-600 mt-0.5 shrink-0" />
+            <div className="flex-1">
+              <p className="text-sm text-blue-800 font-medium">
+                Wir haben Ihre bisherigen Eingaben wiederhergestellt.
+              </p>
+              <div className="flex gap-2 mt-2">
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={dismissRestoredBanner}
+                  className="text-blue-700 border-blue-300 hover:bg-blue-100"
+                >
+                  OK
+                </Button>
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  onClick={clearAndReset}
+                  className="text-blue-600 hover:bg-blue-100"
+                >
+                  Neu beginnen
+                </Button>
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={dismissRestoredBanner}
+              className="text-blue-400 hover:text-blue-600"
+              aria-label="Banner schliessen"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Formular */}
       <Card>
         <CardContent className="pt-6">
@@ -142,14 +189,24 @@ export function KlageWizard() {
 
       {/* Navigation */}
       <div className="flex justify-between">
-        <Button
-          variant="outline"
-          onClick={vorherigerSchritt}
-          disabled={schritt === 0}
-        >
-          <ChevronLeft className="mr-1 h-4 w-4" />
-          Zurueck
-        </Button>
+        <div className="flex gap-2">
+          <Button
+            variant="outline"
+            onClick={vorherigerSchritt}
+            disabled={schritt === 0}
+          >
+            <ChevronLeft className="mr-1 h-4 w-4" />
+            Zurueck
+          </Button>
+          <Button
+            variant="ghost"
+            onClick={clearAndReset}
+            className="text-muted-foreground"
+          >
+            <RotateCcw className="mr-1 h-4 w-4" />
+            Neu beginnen
+          </Button>
+        </div>
 
         {istLetzterSchritt ? (
           <Button onClick={onSubmit} disabled={!accepted}>

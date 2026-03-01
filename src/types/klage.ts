@@ -30,6 +30,7 @@ export interface KlageFormData {
     taetigkeit: string;
     bruttoMonatsgehalt: number;
     arbeitsort: string;
+    arbeitsortPlz: string;
   };
   kuendigung: {
     kuendigungDatum: string;
@@ -51,4 +52,5 @@ export interface Arbeitsgericht {
   fax: string;
   telefon: string;
   bundesland: string;
+  zustaendigePlzBereiche: string[];
 }

@@ -1,15 +1,57 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { UseFormReturn } from "react-hook-form";
-import { Search, MapPin, Info } from "lucide-react";
+import { Search, MapPin, Info, Star } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import type { KlageFormData } from "@/types/klage";
-import { arbeitsgerichte, getArbeitsgerichtById } from "@/lib/gerichts-daten";
+import type { KlageFormData, Arbeitsgericht } from "@/types/klage";
+import {
+  getArbeitsgerichtById,
+  sucheArbeitsgerichte,
+  findeZustaendigeGerichte,
+} from "@/lib/gerichts-daten";
 
 interface Props {
   form: UseFormReturn<KlageFormData>;
+}
+
+function GerichtKarte({
+  gericht,
+  isSelected,
+  onSelect,
+  istVorschlag,
+}: {
+  gericht: Arbeitsgericht;
+  isSelected: boolean;
+  onSelect: () => void;
+  istVorschlag?: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onSelect}
+      className={`w-full text-left rounded-md border p-3 transition-colors ${
+        isSelected
+          ? "border-primary bg-primary/5"
+          : "hover:bg-muted"
+      }`}
+    >
+      <div className="flex items-start gap-2">
+        {istVorschlag ? (
+          <Star className="h-4 w-4 mt-0.5 shrink-0 text-yellow-500" />
+        ) : (
+          <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-muted-foreground" />
+        )}
+        <div>
+          <p className="font-medium text-sm">{gericht.name}</p>
+          <p className="text-xs text-muted-foreground">
+            {gericht.strasse}, {gericht.plz} {gericht.ort}
+          </p>
+        </div>
+      </div>
+    </button>
+  );
 }
 
 export function Schritt5Gericht({ form }: Props) {
@@ -17,18 +59,38 @@ export function Schritt5Gericht({ form }: Props) {
   const [suchbegriff, setSuchbegriff] = useState("");
 
   const selectedId = watch("gericht.arbeitsgerichtId");
+  const arbeitsortPlz = watch("arbeitsverhaeltnis.arbeitsortPlz");
+  const beklagterPlz = watch("beklagter.plz");
+
   const selectedGericht = selectedId
     ? getArbeitsgerichtById(selectedId)
     : null;
 
-  const gefiltert = suchbegriff
-    ? arbeitsgerichte.filter(
-        (g) =>
-          g.name.toLowerCase().includes(suchbegriff.toLowerCase()) ||
-          g.ort.toLowerCase().includes(suchbegriff.toLowerCase()) ||
-          g.bundesland.toLowerCase().includes(suchbegriff.toLowerCase())
-      )
-    : arbeitsgerichte;
+  // Vorgeschlagene Gerichte basierend auf PLZ
+  const vorgeschlageneGerichte = useMemo(() => {
+    const gerichteMap = new Map<string, Arbeitsgericht>();
+
+    if (arbeitsortPlz && arbeitsortPlz.length >= 2) {
+      for (const g of findeZustaendigeGerichte(arbeitsortPlz)) {
+        gerichteMap.set(g.id, g);
+      }
+    }
+
+    if (beklagterPlz && beklagterPlz.length >= 2) {
+      for (const g of findeZustaendigeGerichte(beklagterPlz)) {
+        gerichteMap.set(g.id, g);
+      }
+    }
+
+    return Array.from(gerichteMap.values());
+  }, [arbeitsortPlz, beklagterPlz]);
+
+  // Manuelle Suche
+  const suchergebnisse = suchbegriff
+    ? sucheArbeitsgerichte(suchbegriff)
+    : [];
+
+  const vorschlagIds = new Set(vorgeschlageneGerichte.map((g) => g.id));
 
   return (
     <div className="space-y-6">
@@ -36,29 +98,67 @@ export function Schritt5Gericht({ form }: Props) {
         <h2 className="text-xl font-semibold">Zustaendiges Arbeitsgericht</h2>
         <p className="text-sm text-muted-foreground mt-1">
           Waehlen Sie das Arbeitsgericht, bei dem Sie die Klage einreichen
-          moechten. In der Regel ist das Arbeitsgericht an Ihrem Arbeitsort oder
-          am Sitz des Arbeitgebers zustaendig.
+          moechten.
         </p>
       </div>
 
       <div className="rounded-md border border-blue-200 bg-blue-50 p-3">
         <div className="flex gap-2">
           <Info className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" />
-          <p className="text-sm text-blue-800">
-            Auch wenn Sie ein oertlich unzustaendiges Arbeitsgericht waehlen,
-            bleibt die 3-Wochen-Frist gewahrt. Das Gericht verweist den Fall
-            von Amts wegen an das zustaendige Gericht.
-          </p>
+          <div className="text-sm text-blue-800 space-y-1">
+            <p>
+              Gemaess § 46 Abs. 2 ArbGG koennen Sie waehlen: Arbeitsgericht
+              am <strong>Arbeitsort</strong> oder am{" "}
+              <strong>Sitz des Arbeitgebers</strong>.
+            </p>
+            <p>
+              Auch bei falschem Gericht bleibt die 3-Wochen-Frist gewahrt.
+              Das Gericht verweist den Fall von Amts wegen weiter.
+            </p>
+          </div>
         </div>
       </div>
 
+      {/* Vorgeschlagene Gerichte */}
+      {vorgeschlageneGerichte.length > 0 && (
+        <div>
+          <h3 className="font-semibold text-sm mb-2 flex items-center gap-1">
+            <Star className="h-4 w-4 text-yellow-500" />
+            Vorgeschlagene Gerichte
+          </h3>
+          <p className="text-xs text-muted-foreground mb-3">
+            Basierend auf Ihrem Arbeitsort
+            {beklagterPlz && arbeitsortPlz && beklagterPlz.slice(0, 2) !== arbeitsortPlz.slice(0, 2)
+              ? " und dem Sitz des Arbeitgebers"
+              : ""}
+            . Bitte pruefen Sie die Zustaendigkeit.
+          </p>
+          <div className="space-y-2">
+            {vorgeschlageneGerichte.map((gericht) => (
+              <GerichtKarte
+                key={gericht.id}
+                gericht={gericht}
+                isSelected={selectedId === gericht.id}
+                onSelect={() => setValue("gericht.arbeitsgerichtId", gericht.id)}
+                istVorschlag
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Manuelle Suche */}
       <div>
-        <Label htmlFor="gericht-suche">Arbeitsgericht suchen</Label>
+        <Label htmlFor="gericht-suche">
+          {vorgeschlageneGerichte.length > 0
+            ? "Anderes Gericht suchen"
+            : "Arbeitsgericht suchen"}
+        </Label>
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
             id="gericht-suche"
-            placeholder="Stadt oder Bundesland eingeben..."
+            placeholder="Name, Stadt oder PLZ eingeben..."
             value={suchbegriff}
             onChange={(e) => setSuchbegriff(e.target.value)}
             className="pl-10"
@@ -66,36 +166,26 @@ export function Schritt5Gericht({ form }: Props) {
         </div>
       </div>
 
-      <div className="space-y-2 max-h-64 overflow-y-auto">
-        {gefiltert.map((gericht) => (
-          <button
-            key={gericht.id}
-            type="button"
-            onClick={() => setValue("gericht.arbeitsgerichtId", gericht.id)}
-            className={`w-full text-left rounded-md border p-3 transition-colors ${
-              selectedId === gericht.id
-                ? "border-primary bg-primary/5"
-                : "hover:bg-muted"
-            }`}
-          >
-            <div className="flex items-start gap-2">
-              <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-muted-foreground" />
-              <div>
-                <p className="font-medium text-sm">{gericht.name}</p>
-                <p className="text-xs text-muted-foreground">
-                  {gericht.strasse}, {gericht.plz} {gericht.ort}
-                </p>
-              </div>
-            </div>
-          </button>
-        ))}
-        {gefiltert.length === 0 && (
-          <p className="text-sm text-muted-foreground text-center py-4">
-            Kein Arbeitsgericht gefunden. Versuchen Sie einen anderen
-            Suchbegriff.
-          </p>
-        )}
-      </div>
+      {suchbegriff && (
+        <div className="space-y-2 max-h-64 overflow-y-auto">
+          {suchergebnisse
+            .filter((g) => !vorschlagIds.has(g.id))
+            .map((gericht) => (
+              <GerichtKarte
+                key={gericht.id}
+                gericht={gericht}
+                isSelected={selectedId === gericht.id}
+                onSelect={() => setValue("gericht.arbeitsgerichtId", gericht.id)}
+              />
+            ))}
+          {suchergebnisse.length === 0 && (
+            <p className="text-sm text-muted-foreground text-center py-4">
+              Kein Arbeitsgericht gefunden. Versuchen Sie einen anderen
+              Suchbegriff.
+            </p>
+          )}
+        </div>
+      )}
 
       {selectedGericht && (
         <div className="rounded-md border bg-muted/50 p-4">
@@ -108,7 +198,8 @@ export function Schritt5Gericht({ form }: Props) {
             {selectedGericht.ort}
           </p>
           <p className="text-sm text-muted-foreground mt-1">
-            Tel: {selectedGericht.telefon} | Fax: {selectedGericht.fax}
+            Tel: {selectedGericht.telefon}
+            {selectedGericht.fax && ` | Fax: ${selectedGericht.fax}`}
           </p>
         </div>
       )}

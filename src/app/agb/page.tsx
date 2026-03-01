@@ -120,7 +120,7 @@ export default function AgbPage() {
       </p>
 
       <p className="text-sm text-muted-foreground mt-8">
-        Stand: Februar 2026
+        Stand: Maerz 2026
       </p>
     </div>
   );

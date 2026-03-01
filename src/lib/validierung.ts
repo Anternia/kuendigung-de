@@ -22,6 +22,7 @@ export const arbeitsverhaeltnisSchema = z.object({
   taetigkeit: z.string().min(2, "Bitte geben Sie Ihre Taetigkeit ein"),
   bruttoMonatsgehalt: z.coerce.number().positive("Bitte geben Sie Ihr Bruttomonatsgehalt ein"),
   arbeitsort: z.string().min(2, "Bitte geben Sie Ihren Arbeitsort ein"),
+  arbeitsortPlz: z.string().regex(/^\d{5}$/, "Bitte geben Sie eine gueltige PLZ ein (5 Ziffern)"),
 });
 
 export const kuendigungSchema = z.object({

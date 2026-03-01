@@ -97,7 +97,7 @@ export function Schritt6Zusammenfassung({
             label="Bruttomonatsgehalt"
             value={`${Number(data.arbeitsverhaeltnis.bruttoMonatsgehalt).toLocaleString("de-DE", { minimumFractionDigits: 2 })} EUR`}
           />
-          <Feld label="Arbeitsort" value={data.arbeitsverhaeltnis.arbeitsort} />
+          <Feld label="Arbeitsort" value={`${data.arbeitsverhaeltnis.arbeitsort} (${data.arbeitsverhaeltnis.arbeitsortPlz})`} />
         </dl>
       </div>
 

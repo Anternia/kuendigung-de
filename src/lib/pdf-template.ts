@@ -12,7 +12,7 @@ function formatDateDE(dateStr: string): string {
   });
 }
 
-function getKuendigungArtText(art: KuendigungArt): string {
+function getKuendigungArtAdjektiv(art: KuendigungArt): string {
   switch (art) {
     case KuendigungArt.ORDENTLICH:
       return "ordentliche";
@@ -20,6 +20,17 @@ function getKuendigungArtText(art: KuendigungArt): string {
       return "ausserordentliche (fristlose)";
     case KuendigungArt.AENDERUNGSKUENDIGUNG:
       return "Aenderungskuendigung";
+  }
+}
+
+function getKuendigungArtAdverb(art: KuendigungArt): string {
+  switch (art) {
+    case KuendigungArt.ORDENTLICH:
+      return "ordentlich";
+    case KuendigungArt.AUSSERORDENTLICH:
+      return "ausserordentlich (fristlos)";
+    case KuendigungArt.AENDERUNGSKUENDIGUNG:
+      return "im Wege der Aenderungskuendigung";
   }
 }
 
@@ -75,11 +86,12 @@ export function generateKlageschriftContent(
     throw new Error("Arbeitsgericht nicht gefunden");
   }
 
-  const kuendigungArtText = getKuendigungArtText(data.kuendigung.kuendigungArt);
+  const kuendigungArtAdjektiv = getKuendigungArtAdjektiv(data.kuendigung.kuendigungArt);
+  const kuendigungArtAdverb = getKuendigungArtAdverb(data.kuendigung.kuendigungArt);
   const beklagterBezeichnung = getBeklagterBezeichnung(data);
   const beendigungsklausel = getBeendigungsklausel(data);
 
-  const klageantrag1 = `Es wird festgestellt, dass das Arbeitsverhaeltnis zwischen dem Klaeger und der Beklagten durch die ${kuendigungArtText} Kuendigung vom ${formatDateDE(data.kuendigung.kuendigungDatum)}, zugegangen am ${formatDateDE(data.kuendigung.zugangDatum)}, ${beendigungsklausel}.`;
+  const klageantrag1 = `Es wird festgestellt, dass das Arbeitsverhaeltnis zwischen dem Klaeger und der Beklagten durch die ${kuendigungArtAdjektiv} Kuendigung vom ${formatDateDE(data.kuendigung.kuendigungDatum)}, zugegangen am ${formatDateDE(data.kuendigung.zugangDatum)}, ${beendigungsklausel}.`;
 
   const klageantrag2 =
     "Es wird festgestellt, dass das Arbeitsverhaeltnis auch nicht durch andere Beendigungstatbestaende endet, sondern ueber den Kuendigungstermin hinaus ungekuendigt fortbesteht.";
@@ -90,7 +102,7 @@ export function generateKlageschriftContent(
 
   const begruendung = [
     `Der Klaeger ist seit dem ${formatDateDE(data.arbeitsverhaeltnis.beschaeftigungBeginn)} bei der Beklagten als ${data.arbeitsverhaeltnis.taetigkeit} beschaeftigt. Das monatliche Bruttogehalt betraegt ${Number(data.arbeitsverhaeltnis.bruttoMonatsgehalt).toLocaleString("de-DE", { minimumFractionDigits: 2 })} EUR.`,
-    `Mit Schreiben vom ${formatDateDE(data.kuendigung.kuendigungDatum)}, zugegangen am ${formatDateDE(data.kuendigung.zugangDatum)}, hat die Beklagte das Arbeitsverhaeltnis ${kuendigungArtText} gekuendigt.`,
+    `Mit Schreiben vom ${formatDateDE(data.kuendigung.kuendigungDatum)}, zugegangen am ${formatDateDE(data.kuendigung.zugangDatum)}, hat die Beklagte das Arbeitsverhaeltnis ${kuendigungArtAdverb} gekuendigt.`,
     "Die Kuendigung ist sozial ungerechtfertigt und damit rechtsunwirksam. Die Kuendigung ist weder durch Gruende in der Person oder in dem Verhalten des Klaegers noch durch dringende betriebliche Erfordernisse bedingt.",
     "Der Klaeger erhebt daher innerhalb der Frist des § 4 KSchG Kuendigungsschutzklage.",
   ];

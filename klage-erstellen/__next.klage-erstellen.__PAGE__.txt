@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[22694,["/kuendigung-de/_next/static/chunks/d640440dfe51720f.js","/kuendigung-de/_next/static/chunks/5d607a299fbece2e.js","/kuendigung-de/_next/static/chunks/1afa74c2ac696929.js","/kuendigung-de/_next/static/chunks/fdb36db4d4f9c155.js"],"KlageWizard"]
+3:I[97367,["/kuendigung-de/_next/static/chunks/ff1a16fafef87110.js","/kuendigung-de/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"RZS7RhvgRE5AvujHYFc7V","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8","children":[["$","div",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-2xl font-bold sm:text-3xl","children":"Kündigungsschutzklage erstellen"}],["$","p",null,{"className":"mt-2 text-muted-foreground","children":"Beantworten Sie die folgenden Fragen, um eine druckfertige Klageschrift zu erhalten. Alle mit * markierten Felder sind Pflichtfelder."}]]}],["$","$L2",null,{}]]}],[["$","script","script-0",{"src":"/kuendigung-de/_next/static/chunks/1afa74c2ac696929.js","async":true}],["$","script","script-1",{"src":"/kuendigung-de/_next/static/chunks/fdb36db4d4f9c155.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

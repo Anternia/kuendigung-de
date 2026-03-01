@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /klage-erstellen/ergebnis
+
+Sitemap: https://kuendigung.de/sitemap.xml
